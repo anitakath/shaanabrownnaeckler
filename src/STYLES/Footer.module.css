@@ -1,0 +1,29 @@
+
+
+.footerContainer{
+    min-height: 5vh;
+    background-color: hsla(182, 25%, 100%, 0.5);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.dataprivacyLink{
+    color: orange;
+    text-decoration: none;
+    margin: 10px;
+    position: relative;
+    top: 1px;
+}
+
+
+@media screen and (max-width: 800px){
+    .footerContainer{
+        transition: 0.4s ease;
+        padding: 20px;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,62 @@
+
+
+.sectionContainer{
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid white;
+    overflow: scroll;
+}
+
+.aboutDataprivacyContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin-top: 12vh;
+    padding: 10px;
+    height: auto;
+   
+   
+}
+
+.headerImg{
+    width: 100vw;
+}
+
+.aboutDataprivacyContainer h1 {
+    color: silver;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+.dataprivacyInfosContainer{
+    position: absolute;
+    border: 3px solid red;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.dataprivacyInfo{
+    width: 80%;
+    height: 100vh;
+    margin: 20px;
+    background-color: hsla(0, 0%, 100%, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    overflow-y: scroll;
+    
+}
+
+.dataprivacyInfo p{
+    text-align: center;
+    line-height: 25px;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
