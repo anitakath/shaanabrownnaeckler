@@ -15,14 +15,31 @@
     width: 100vw;
     margin-top: 12vh;
     padding: 10px;
-    height: auto;
-   
-   
+    height: 100vh;
+    overflow: scroll;
+    background-image: url('../Shaana/IMG_0008.jpg');
+    background-size: cover;
 }
 
-.headerImg{
-    width: 100vw;
+
+@media screen and (max-width: 800px){
+
+    .aboutDataprivacyContainer{
+        transition: 0.4s ease;
+        background-position: -200px;
+    }
 }
+
+
+
+@media screen and (max-width: 400px){
+
+    .aboutDataprivacyContainer{
+        transition: 0.4s ease;
+        background-position: -310px;
+    }
+}
+
 
 .aboutDataprivacyContainer h1 {
     color: silver;
@@ -32,7 +49,6 @@
 
 .dataprivacyInfosContainer{
     position: absolute;
-    border: 3px solid red;
     top: 20px;
     display: flex;
     flex-direction: column;
@@ -51,7 +67,6 @@
     align-items: center;
     padding: 40px;
     overflow-y: scroll;
-    
 }
 
 .dataprivacyInfo p{

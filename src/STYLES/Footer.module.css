@@ -5,9 +5,10 @@
     background-color: hsla(182, 25%, 100%, 0.5);
     padding: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    text-align: center;
 }
 
 
@@ -17,6 +18,7 @@
     margin: 10px;
     position: relative;
     top: 1px;
+    width: 100%;
 }
 
 

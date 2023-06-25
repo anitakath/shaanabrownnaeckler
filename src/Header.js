@@ -16,7 +16,7 @@ function Header (){
         <div className={styles.headerContainer}>
           
             <div className={styles.headerNavigation}>
-                <h1 className={styles.headerTitle}>  SHAANA </h1>
+                <h1 className={styles.headerTitle}>  Shaana Brown Näckler Hebamme </h1>
                 <Navigation />
 
             </div>

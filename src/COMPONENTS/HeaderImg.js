@@ -25,7 +25,6 @@ function HeaderImg(){
     return(
         <div className={styles.headerImgContainer}>
             <img src={header} className={styles.headerImage} alt="header" />
-        
         </div> 
 
     )

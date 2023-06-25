@@ -9,7 +9,6 @@
     font-size: 1.2rem;
     border-bottom: 2px solid hsl(16, 79%, 60%);;
     background-color: hsla(16, 79%, 60%, 0.6);
-
 }
 
 .error:focus{

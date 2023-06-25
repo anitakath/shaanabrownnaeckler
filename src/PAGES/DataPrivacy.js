@@ -20,13 +20,15 @@ function DataPrivacy () {
     }, [])
 
 
+
+
     return(
         <div className={styles.sectionContainer}>
             <h1> </h1>
             <div className={styles.aboutDataprivacyContainer} data-aos="zoom-in"  data-aos-duration="3000"> 
-            <img src={header} className={styles.headerImg} alt="header">
+           
                 
-            </img>
+          
             <div className={styles.dataprivacyInfosContainer}>
                 <h1> DATENSCHUTZ </h1>
             

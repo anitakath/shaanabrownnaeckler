@@ -1,14 +1,29 @@
 
-
-.headerContainer{
+.headerTitle{
+    width: 60vw;
     position: relative;
-    margin: 0;
-    padding: 0;
+    top: 5px;
+    font-size: 1.7rem;
     display: flex;
     justify-content: center;
-    align-items: center
-
+    align-items: center;
+    text-align: center;
 }
+
+
+
+.headerNavigation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    background-color: #ffffff80;
+}
+
 
 .headerImgContainer{
     overflow: hidden;
@@ -18,7 +33,6 @@
 .headerImage{
     width: 100vw;
     height: 110vh;
-  
 }
 
 @media  screen and (max-width: 1200px) {
@@ -30,19 +44,23 @@
         position: relative;
         top: 12vh;
         left: -200px;
-
-    }
-    
+    }   
 }
 
 @media  screen and (max-width: 1000px) {
   
+    .headerTitle{
+        font-size: 1.3rem;
+        transition: 0.4s ease;
+        width: 120vw;
+        left: 20px;
+        top: 0;
+    }
+
     .headerImage{
         transition: 0.4s ease;
         left: -250px;
-
-    }
-    
+    }   
 }
 
 @media  screen and (max-width: 600px) {
@@ -54,39 +72,22 @@
 
 }
 
-.headerTitle{
-    position: relative;
-    top: 5px;
-    font-size: 2rem;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-@media screen and (max-width: 1000px){
-    .headerTitle{
-        font-size: 1.3rem;
-        left: 20px;
-        top: 0;
+@media  screen and (max-width: 420px) {
+  
+    .headerImage{
+        transition: 0.4s ease;
+        left: -480px;
     }
 }
 
 
-.headerNavigation{
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    background-color: #ffffff80;
-   
-}
 
-.headerNavigation h1{
-    width: 20vw;
+@media screen and (max-width: 300px){
+    .headerTitle{
+        font-size: 0.9rem;
+    }
 
+    .headerImage{
+        left: -560px
+    }
 }

@@ -8,7 +8,28 @@ import useInput from '../HOOKS/use-input';
 import {useState} from 'react'
 
 
+import $ from 'jquery'
+import 'jquery-ui-dist/jquery-ui'
+
+import {useEffect} from 'react'
+
 function Contact(){
+
+
+    
+    useEffect(() => {
+        $( function() {
+            $( "#datepicker" ).datepicker();
+            $( "#anim" ).on( "change", function() {
+              $( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+            });
+            $( "#datepicker" ).datepicker( "option", "dateFormat",'yy-mm-dd');
+          } );
+          
+
+    }, [])
+
+
 
     
     const{
@@ -59,15 +80,25 @@ function Contact(){
 
     console.log(enteredEmailHasError)
 
-
     const{
         value: enteredBirth,
         hasError: enteredBirthHasError,
         changeValueHandler: birthChangeHandler,
         inputBlurHandler: birthBlurHandler,
         valueIsValid: birthIsValid
-    } = useInput(value => value.trim() !== '')
+    } = useInput(value => value === $( "#datepicker" ).datepicker( "option", "dateFormat",'yy-mm-dd'))
 
+    /*
+    let enteredDate = $("#datepicker").prop("value");
+    let parsed = Date.parse(enteredDate)
+    let start = new Date();
+    let end = new Date().add(21).days();
+    if(!parsed.between(start, end)){
+        alert('Date is valid')
+    } else{
+        alert("date is not valid")
+    }
+    */
 
     const{
         value: enteredInsurance,
@@ -123,7 +154,30 @@ function Contact(){
     let birthStyle = enteredBirthHasError ? 'error' : 'input'
     let insuranceStyle = enteredInsuranceHasError ? 'error' : 'input'
 
-    console.log(fNameStyle)
+   
+    
+
+
+
+    console.log(enteredBirth)
+
+
+    const date = new Date()
+    console.log(date)
+
+    let day = date.getDate();
+    console.log(day)
+
+    let month = date.getMonth() + 1;
+    console.log(month)
+
+    let year = date.getFullYear();
+    console.log(year)
+
+    let currentDate = `${day}-${month}-${year}`
+    console.log(currentDate)
+
+
     return(
         <div className={styles.sectionContainer}>
             
@@ -201,16 +255,19 @@ function Contact(){
                     
                     ></input>
                     <label> errechneter Entbindungstermin </label>
-                    <input 
-                    type="text" 
-                    className={birthStyle}
+                  <input 
+                    className="input"
+                    type="text"
+                    id="datepicker"
                     value={enteredBirth}
                     onChange={birthChangeHandler}
                     onBlur={birthBlurHandler}
-                    id="user"
                     name="birth"
-                    
-                    ></input>
+                    min={currentDate}
+                    required
+                    />
+                   
+                
                     <label> Krankenkasse </label>
                     <input 
                     type="text" 

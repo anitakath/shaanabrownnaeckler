@@ -4,7 +4,6 @@
     width: 100vw;
     text-decoration: none;
     z-index: 100;
-  
 }
 
 .navigation{
@@ -21,7 +20,22 @@
 }
 
 
+.linkActive{
+    transition: 0.3s ease;
+    cursor: pointer;
+    color: hsla(22, 61%, 75%, 1);
+    font-weight: bolder;
+    text-decoration: none;
+    border-bottom: 2px solid black;
+  
 
+}
+
+.linkInactive{
+    transition: 0.3s ease;
+    color: grey;
+    text-decoration: none;
+}
 
 
 
@@ -45,7 +59,7 @@
 }
 
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1212px){
 
     .navigationContainer{
         transition: 0.4s ease;
@@ -78,6 +92,8 @@
         width: 35px;
         height: 35px;
         z-index: 100;
+        position: relative;
+        right: -20px;
     }
 
     .menuBar:hover{
@@ -90,18 +106,3 @@
 }
 
 
-.linkActive{
-    transition: 0.3s ease;
-    cursor: pointer;
-    color: hsla(22, 61%, 75%, 1);
-    font-weight: bolder;
-    text-decoration: none;
-    border-bottom: 2px solid black;
-
-}
-
-.linkInactive{
-    transition: 0.3s ease;
-    color: grey;
-    text-decoration: none;
-}

@@ -7,7 +7,7 @@ import 'aos/dist/aos.css';
 
 import {useEffect} from 'react'
 
-
+import {Link} from 'react-router-dom'
 
 function MyWork(){
 
@@ -58,13 +58,13 @@ function MyWork(){
 
 
                      
-                      <div className={styles.myWorkWrapper}>
+                      <div className={styles.myWorkWrapperSwitch}>
 
 
                              <div className={styles.careTwo} data-aos="fade-up"   data-aos-duration="1000">  </div>
 
 
-                             <div className={styles.workDetailsText} data-aos="fade-down"   data-aos-duration="1000">
+                             <div className={styles.workDetailsTextTwo} data-aos="fade-down"   data-aos-duration="1000">
                                 <h1>  </h1>
                            
                                     <p> Durch meine Orientierung an den Mutterschaftsrichtlinien und internationalen Leitlinien stelle ich sicher, 
@@ -109,6 +109,10 @@ function MyWork(){
                                         als Mutter und Ihrem Neugeborenen zu fördern. Ich überwache Ihre körperliche Erholung und stehe Ihnen bei möglichen
                                         Fragen oder Bedenken zur Seite. Dazu gehört die regelmäßige Überprüfung von Vitalparametern, 
                                         die Wundheilung nach der Geburt und die Unterstützung bei körperlichen Veränderungen, die mit dem Wochenbett einhergehen.</p>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
                                     
                                     <p className={styles.pBottom}> Ein weiterer wichtiger Aspekt meiner Betreuung im Wochenbett ist die Unterstützung beim Stillen und der Förderung einer 
                                         erfolgreichen Stillbeziehung zwischen Ihnen und Ihrem Baby. Ich stehe Ihnen mit Rat und Tat zur Seite, beantworte Ihre Fragen, 
@@ -126,9 +130,9 @@ function MyWork(){
 
 
                      
-                      <div className={styles.myWorkWrapper}>
+                      <div className={styles.myWorkWrapperSwitch}>
                              <div className={styles.careFour} data-aos="fade-up"   data-aos-duration="1000">  </div>
-                             <div className={styles.workDetailsText} data-aos="fade-down"   data-aos-duration="1000">
+                             <div className={styles.workDetailsTextTwo} data-aos="fade-down"   data-aos-duration="1000">
                                     <h1> </h1>
                                     <p> Darüber hinaus begleite ich Sie in dieser besonderen Zeit auch auf emotionaler Ebene. Ich stehe Ihnen als Ansprechpartnerin
                                             zur Verfügung, höre Ihnen zu und ermutige Sie, sich mit Ihren Gedanken und Gefühlen auseinanderzusetzen. 
@@ -152,8 +156,12 @@ function MyWork(){
 
                       </div>
 
-                      <h2 className={styles.myWorkTitle} data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">Ich freue mich darauf, Sie während dieser einzigartigen Phase begleiten zu dürfen und freue mich über ein persönliches Kennenlernen.</h2>
+                      
+                      <h2 className={styles.myWorkTitleTwo} data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">Ich freue mich darauf, Sie während dieser einzigartigen Phase begleiten zu dürfen und freue mich über ein persönliches Kennenlernen. <br/> 
+                      <Link to="/contact" className={styles.contactLink}>Zum Kontaktformular </Link> </h2>
+                      
 
+     
 
 
 

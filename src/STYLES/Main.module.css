@@ -1,28 +1,42 @@
 
+/* #1 ABOUT ME */
+/* #2 MY WORK */
+/* #3 CONTACT */
+
+
 
 .sectionContainer{
     min-height: 100vh;
     margin: 0;
     padding: 0;
     border-top: 1px solid white;
-    
 }
 
 
 .aboutMeContainer, .myWorkContainer, .contactContainer{
     display: flex;
     width: 100vw;
-    min-height: 80vh;
+    min-height: 100vh;
     margin-top: 12vh;
     padding: 10px;
+    text-align: center;
 }
+
+
+.aboutMeTextWrapper{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
 
 .aboutMeImg{
     width: 50vw;
     background-image: url('../Shaana/IMG_0175.jpg');
     background-size: cover;
     object-fit: cover;
-    margin: 0px 20px;
+    margin: 0px 20px 0px 10px;
 }
 
 
@@ -30,15 +44,18 @@
 
 .aboutMeTextContainer{
     padding: 10px;
-    margin: 10px 40px;
     width: 50vw;
+    margin-bottom: 50px;
 }
+
+
 
 @media screen and (max-width: 1400px){
     .aboutMeImg{
         transition: 0.4s ease;
         background-position: -100px 0px;
-        width: 60vw;
+        width: 50vw;
+        margin: 0 20px;
     }
 
     .aboutMeTextContainer{
@@ -60,7 +77,8 @@
         background-position: 0;
         height: 800px;
         transition: 0.4s ease;
-        width: 80vw;
+        width: 100vw;
+        background-position: 0px -200px;
     }
 
     .aboutMeTextContainer{
@@ -74,22 +92,47 @@
     }
 }
 
-@media screen and(max-width:1000px){
+
+
+
+@media screen and (max-width:1000px){
     .aboutMeTextContainer{
         padding: 50px;
     }
+
+    .aboutMeImg{
+        background-position: 0px -100px;
+    }
 }
 
-.aboutMeTextContainer h1{
-    text-align: center;
+@media screen and (max-width: 600px){
+    .aboutMeImg{
+        background-position: 0px;
+    }
 }
-
 
 .aboutMeTextContainer p{
     line-height: 30px;
     text-align: center;
     margin: 40px 0px;
 }
+/*
+.aboutMeImg{
+    transition: 0.4s ease;
+    border: 3px solid gold;
+    background-position: 0px -150px;
+}
+
+*/
+
+
+
+
+
+
+
+
+
 
 
 
@@ -105,12 +148,20 @@
     align-items: center;
 }
 
-.myWorkTitle{
+.myWorkTitle, .myWorkTitleTwo{
     text-align: center;
     font-size: 1.2rem;
     height:60px;
     padding: 10px;
 }
+
+.myWorkTitleTwo{
+    margin-top:50px;
+}
+
+
+
+
 
 .myWorkTitle span{
     font-weight: bolder;
@@ -122,10 +173,7 @@
 }
 
 
-
-
-
-.myWorkWrapper{
+.myWorkWrapper, .myWorkWrapperSwitch{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,14 +181,35 @@
     min-height: 1000px;
 }
 
-.workDetailsText{
-    width: 40vw;
+.workDetailsText, .workDetailsTextTwo{
+    width: 38vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 40px;
+    font-size: 1.3rem;
+   
 }
 
+
+.workDetailsText h1, .workDetailsTextTwo h1{
+    text-align: center;
+    padding: 20px;
+    color: hsla(16, 79%, 50%, 1);
+
+}
+
+.workDetailsText p, .workDetailsTextTwo p{
+    width: 100%;
+    z-index: 10;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bolder;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    margin: -5px 0px;
+}
 
 
 
@@ -148,7 +217,7 @@
     width: 47%;
     margin: 40px;
     box-shadow: 0px 0px 10px grey;
-    height: 850px;
+    height: 100vh;
     width: 50vw;
 }
 
@@ -177,39 +246,38 @@
     background-size: cover;
 }
 
-.workDetailsText{
+.workDetailsText, .workDetailsTextTwo{
     align-items: center;
 }
 
 
-.workDetailsText h1{
-    text-align: center;
-    border-bottom: 2px solid  hsl(22, 61%, 75%);
-    padding: 20px;
-    color: hsla(16, 79%, 50%, 1);
 
-}
 
-.workDetailsText p{
-    width: 100%;
-    z-index: 10;
-    line-height: 30px;
-    text-align: center;
-    font-weight: bolder;
-    min-height: 220px;
-    display: flex;
-    align-items: center;
-}
 
 .pBottom{
+    position: relative;
+    top: -40px;
     padding-bottom: 30px;
-    border-bottom: 2px solid hsl(22, 61%, 75%);
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 
+.contactLink{
+    border: none;
+    text-decoration: none;
+    color:hsl(16, 79%, 60%);
+    font-weight: bolder;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+}
 
-
-
+.contactLink:hover{
+    transition: 0.4s ease;
+    color:hsla(16, 79%, 40%, 1);
+    letter-spacing: 2px;
+}
 
 
 
@@ -217,34 +285,45 @@
 
 @media screen and (max-width: 1500px){
 
-    .myWorkWrapper{
+    .myWorkWrapper, .myWorkWrapperSwitch{
         flex-direction: column;
         align-items: center;
     }
-  
-    .workDetailsText{
-        width: 100vw;
-    }
 
-    .workDetailsText p{
-        transition: 1s ease;
-        width: 80vw;
-        line-height: 25px;
-        margin: 0;
+    .myWorkWrapperSwitch{
+        flex-direction: column-reverse;
     }
 
     .care, .careTwo, .careThree, .careFour{
+        transition: 0.4s ease;
         width: 80vw;
-        height: 85vh;
+        margin: 20px 40px;
+    }
+
+  
+    .workDetailsText{
+        transition: 0.4s ease;
+        margin-top: -50px;
+    }
+
+    
+
+
+    .workDetailsText, .workDetailsTextTwo{
+        width: 100vw;
+    }
+
+    .workDetailsText p, .workDetailsTextTwo p{
+        transition: 1s ease;
+        width: 80vw;
+        line-height: 25px;
+        margin: -20px 0px;
+       
     }
 
 
 
- 
-
-    .careTwo, .careFour{
-        display: none;
-    }
+   
 }
 
 
@@ -252,14 +331,14 @@
 
 
 @media screen and (max-width: 900px){
-    .myWorkWrapper{
+    .myWorkWrapper, .myWorkWrapperSwitch{
         width: 100%;
         display: flex;
 
     
     }
 
-    .workDetailsText{
+    .workDetailsText, .workDetailsTextTwo{
         width: 100%;
     }
 
@@ -272,7 +351,7 @@
         left: 0;
     }
 
-    .workDetailsText p{
+    .workDetailsText p, .workDetailsTextTwo p{
         margin: 10px;
         width: 90vw;
         transition: 0.4s ease;
@@ -297,14 +376,21 @@
         line-height: 30px;
     }
 
+    .myWorkTitle span{
+        padding: 2px;
+    }
+
     .careThree{
         transition: 0.4s ease;
     }
 
+
+    .contactLink{
+        position: relative;
+        color:hsla(16, 79%, 50%, 1);
+    }
   
 }
-
-
 
 
 

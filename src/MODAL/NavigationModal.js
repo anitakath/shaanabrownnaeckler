@@ -15,22 +15,24 @@ import { faX } from '@fortawesome/free-solid-svg-icons'
 
 function Modal(props){
 
-
     const mobileNavigationHandler = () =>{
         props.setShowNavigationModal(false)
     }
 
     const Blackdrop = () =>{
         return(
-            <div className="blackdrop" >
-
+            <div className="blackdrop">
             </div>
         )
     }
 
+
     const NavigationModal = props =>{
+
+
+
         return(
-            <div className="navigationModal">
+            <div className="navigationModal" id="navigationModal">
                 <ul>
                     <li> 
                         <NavLink  className={({isActive}) => isActive ? 'link' : 'inactive'} to="/aboutme" end> ÜBER MICH </NavLink>
@@ -46,7 +48,7 @@ function Modal(props){
                     </li>
                 </ul>
               
-                <button onClick={mobileNavigationHandler} className="closeModalBtnWrapper"> 
+                <button  id="closeNavigationBtn"onClick={mobileNavigationHandler} className="closeModalBtnWrapper"> 
                     <FontAwesomeIcon icon={faX} className="closeModalBtn" />  
                 </button>
 

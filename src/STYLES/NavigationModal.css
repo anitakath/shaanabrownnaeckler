@@ -15,7 +15,7 @@
     transition: 0.4s ease;
     z-index: 100;
     position: fixed;
-    top: 2vh;
+    top: 10vh;
     left: 0;
     color: white;
     display: flex;
@@ -25,8 +25,7 @@
     background-color:  hsla(22, 61%, 75%, 0.8);
     color: hsl(16, 79%, 60%);
     width: 100vw;
-    height: 50vh;
-   
+    height: 40vh;
 }
 
 li{
@@ -62,7 +61,7 @@ li{
     background-color: transparent;
     positioN: absolute;
     top: 10px;
-    right: 70px;
+    right: 15px;
 }
 
 .closeModalBtn{
