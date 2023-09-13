@@ -1,27 +1,25 @@
-import {Link} from 'react-router-dom'
+
 import {NavLink} from 'react-router-dom'
+import { useEffect, useState} from "react";
 
 //FONT AWESOME
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 
-//STYLES 
+//STYLES & ANIMATIONS
 import styles from '../STYLES/Navigation.module.css'
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import {useEffect} from 'react'
 
 
- //HOOKS
-import {useState} from 'react'
-//MODAL
+//MODALS
 import Modal from '../MODAL/NavigationModal'
 
 
-import {Transition}  from 'react-transition-group';
+
 
 
 function Navigation (){
@@ -41,10 +39,13 @@ function Navigation (){
            
            
             <ul className={styles.navigation}>
-                <li  data-aos="fade-left" data-aos-duration="1500" ><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/aboutme" end> ÜBER MICH </NavLink>  </li>
-                <li  data-aos="fade-left" data-aos-duration="1500" data-aos-delay="200"><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/mywork" end> MEINE DIESTLEISTUNGEN </NavLink> </li>
-                <li  data-aos="fade-left" data-aos-duration="1500" data-aos-delay="400"><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/contact" end> KONTAKT </NavLink> </li>
+                <li  data-aos="fade-left" data-aos-duration="1500" ><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/über-mich" end> ÜBER MICH </NavLink>  </li>
+                <li  data-aos="fade-left" data-aos-duration="1500" data-aos-delay="200"><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/meine-dienstleistungen" end> MEINE DIESTLEISTUNGEN </NavLink> </li>
+                <li  data-aos="fade-left" data-aos-duration="1500" data-aos-delay="400"><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/kontakt" end> KONTAKT </NavLink> </li>
                 <li  data-aos="fade-left" data-aos-duration="1500" data-aos-delay="600"><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/" end> STARTSEITE </NavLink></li>
+                  
+
+          
             </ul>
 
 

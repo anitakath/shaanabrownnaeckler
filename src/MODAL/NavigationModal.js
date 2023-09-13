@@ -1,11 +1,13 @@
-import React from 'react'
 
+import React, { useEffect } from "react";
 import ReactDOM from 'react-dom';
+import { NavLink } from "react-router-dom";
 
-//STYLES
-import '../STYLES/NavigationModal.css'
 
-import {NavLink} from 'react-router-dom'
+//STYLES & ANIMATIONS 
+import '../STYLES/Modal.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 //FONT AWESOME
@@ -15,40 +17,45 @@ import { faX } from '@fortawesome/free-solid-svg-icons'
 
 function Modal(props){
 
+
+    useEffect(() =>{
+        AOS.init();
+    }, [])
+
+
     const mobileNavigationHandler = () =>{
         props.setShowNavigationModal(false)
     }
 
-    const Blackdrop = () =>{
+    
+
+    const Background = () =>{
         return(
-            <div className="blackdrop">
+            <div className="background">
             </div>
         )
     }
 
 
     const NavigationModal = props =>{
-
-
-
         return(
-            <div className="navigationModal" id="navigationModal">
+            <div className="navigationModal" id="navigationModal" data-aos="fade-down"  data-aos-duration="400">
                 <ul>
                     <li> 
-                        <NavLink  className={({isActive}) => isActive ? 'link' : 'inactive'} to="/aboutme" end> ÜBER MICH </NavLink>
+                        <NavLink  className={({isActive}) => isActive ? 'active' : 'inactive'} to="/über-mich" onClick={mobileNavigationHandler} end> ÜBER MICH </NavLink>
                     </li>
                     <li>  
-                        <NavLink className={({isActive}) => isActive ? 'link' : 'inactive'} to="/mywork" end> MEINE DIENSTLEISTUNGEN </NavLink>
+                        <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to="/meine-dienstleistungen" onClick={mobileNavigationHandler} end> MEINE DIENSTLEISTUNGEN </NavLink>
                     </li>
                     <li>
-                        <NavLink className={({isActive}) => isActive ? 'link' : 'inactive'} to="/contact" end> KONTAKT </NavLink>
+                        <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to="/kontakt" onClick={mobileNavigationHandler} end> KONTAKT </NavLink>
                     </li>
                     <li>
-                        <NavLink className={({isActive}) => isActive ? 'link' : 'inactive'} to="/" end> STARTSEITE</NavLink>
+                        <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to="/"  onClick={mobileNavigationHandler} end> STARTSEITE</NavLink>
                     </li>
                 </ul>
               
-                <button  id="closeNavigationBtn"onClick={mobileNavigationHandler} className="closeModalBtnWrapper"> 
+                <button  id="closeNavigationBtn" onClick={mobileNavigationHandler} className="closeModalBtnWrapper"> 
                     <FontAwesomeIcon icon={faX} className="closeModalBtn" />  
                 </button>
 
@@ -56,15 +63,13 @@ function Modal(props){
         )
     }
 
-    console.log(props.showNavigationModal)
-    console.log(props.setShowNavigationModal)
 
 
 
     return(
         <div>
             <React.Fragment>
-                {ReactDOM.createPortal(<Blackdrop/>, document.getElementById('blackdropRoot'))}
+                {ReactDOM.createPortal(<Background/>, document.getElementById('blackdropRoot'))}
                 {ReactDOM.createPortal(<NavigationModal/>, document.getElementById('mobileNavigationRoot'))}
             </React.Fragment>
 

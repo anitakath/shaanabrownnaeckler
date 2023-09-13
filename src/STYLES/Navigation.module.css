@@ -1,8 +1,7 @@
 
 
 .navigationContainer{
-    width: 100vw;
-    text-decoration: none;
+    width: 60vw;
     z-index: 100;
 }
 
@@ -23,18 +22,17 @@
 .linkActive{
     transition: 0.3s ease;
     cursor: pointer;
-    color: hsla(22, 61%, 75%, 1);
+    color: #89CFF0;
     font-weight: bolder;
     text-decoration: none;
-    border-bottom: 2px solid black;
-  
-
+    text-align: center;
 }
 
 .linkInactive{
     transition: 0.3s ease;
-    color: grey;
+    color: hsl(0, 0%, 35%);
     text-decoration: none;
+    text-align: center;
 }
 
 
@@ -51,15 +49,18 @@
  /* WEB NAVIGATION */
 .navigation li{
     display: flex;
-    margin: 10px 30px;
     padding: 5px 5px 0px 5px;
-    max-width: 280px;
+    max-width: 300px;
     justify-content: center;
     font-size: 1.2rem;
+    margin: 0px 20px;
 }
 
 
-@media screen and (max-width: 1212px){
+
+
+
+@media screen and (max-width: 1300px){
 
     .navigationContainer{
         transition: 0.4s ease;
@@ -91,18 +92,39 @@
     .menuBar{
         width: 35px;
         height: 35px;
-        z-index: 100;
+        z-index: 1000;
         position: relative;
-        right: -20px;
     }
 
     .menuBar:hover{
         transition: 0.4s ease;
-        color: hsla(22, 61%, 75%, 1);
+        color: #89CFF0;
         cursor: pointer;
         font-weight: bolder;
         z-index: 100;
     }
 }
 
+@media screen and (max-width: 1300px){
+    .navigationContainer{
+        width: 50vw;
+    }
+}
 
+@media screen and (max-width: 1000px){
+    .navigationContainer{
+        width: 30vw;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .menuBar{
+        right: -4vw;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .menuBar{
+        right: -15vw;
+    }
+}

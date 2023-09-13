@@ -19,15 +19,21 @@ const useInput = (validation)  =>{
 
     const hasError = !valueIsValid && isTouched;
 
+    let style = hasError ? "error" : "input"
+
+
+  
+
    
 
-    return{
-        value: enteredValue,
-        changeValueHandler: valueChangeHandler,
-        inputBlurHandler,
-        valueIsValid: valueIsValid,
-        hasError: hasError,
-    }
+    return {
+      value: enteredValue,
+      changeValueHandler: valueChangeHandler,
+      inputBlurHandler,
+      valueIsValid: valueIsValid,
+      hasError: hasError,
+      style,
+    };
 
 
 }

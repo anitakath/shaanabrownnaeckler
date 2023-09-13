@@ -1,14 +1,4 @@
 
-.headerTitle{
-    width: 60vw;
-    position: relative;
-    top: 5px;
-    font-size: 1.7rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
 
 
 
@@ -20,74 +10,112 @@
     height: 10vh;
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    justify-content: center;
     background-color: #ffffff80;
+    z-index: 1000;
+  
 }
+
+.headerTitle{
+    width: 40vw;
+    font-size: 1.7rem;
+    text-align: center;
+    transiton: 0.2s ease;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 .headerImgContainer{
     overflow: hidden;
     width: 100vw;
+    height: 100vh;
+    z-index: 100;
 }
 
-.headerImage{
+.headerImg{
     width: 100vw;
-    height: 110vh;
+    height: 100vh;
+    transition: 0.2s ease;
+    object-fit: cover;
 }
 
-@media  screen and (max-width: 1200px) {
-  
-    .headerImage{
-        transition: 0.4s ease;
-        width: 1500px;
-        z-index: 0;
-        position: relative;
-        top: 12vh;
-        left: -200px;
-    }   
-}
 
-@media  screen and (max-width: 1000px) {
-  
+
+
+
+
+@media screen and (max-width: 1300px){
+
     .headerTitle{
-        font-size: 1.3rem;
-        transition: 0.4s ease;
-        width: 120vw;
-        left: 20px;
-        top: 0;
+        width: 50vw;
+        font-size: 2rem;
+        margin-left: 20px;
     }
 
-    .headerImage{
-        transition: 0.4s ease;
-        left: -250px;
-    }   
+    
 }
 
-@media  screen and (max-width: 600px) {
-  
-    .headerImage{
-        transition: 0.4s ease;
-        left: -300px;
-    }
-
-}
-
-@media  screen and (max-width: 420px) {
-  
-    .headerImage{
-        transition: 0.4s ease;
-        left: -480px;
+@media screen and (max-width: 1200px){
+    .headerTitle{
+        font-size: 1.9rem;  
     }
 }
 
+@media screen and (max-width: 1000px){
 
+    .headerTitle{
+        width: 70vw;
+        font-size: 1.9rem;
+        margin: 20px;
+    }
+
+   
+}
+
+@media screen and (max-width: 900px){
+
+     .headerImg{
+        display: none;
+    }
+
+    .headerImgMobile{
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        
+    }
+    .headerTitle{
+        font-size: 1.7rem;
+       
+    }
+}
+
+@media screen and (max-width: 700px){
+    .headerTitle{
+        font-size: 1.5rem;
+       
+    }
+}
 
 @media screen and (max-width: 300px){
     .headerTitle{
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
-    .headerImage{
-        left: -560px
+    .headerImgMobile{
+        width: 140vw;
     }
 }
+
+
+
+

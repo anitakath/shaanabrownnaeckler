@@ -1,29 +1,24 @@
 
-import {useState} from 'react'
+import {Fragment} from 'react'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 //STYLES 
 import './App.css';
 
-// SECTIONS
-import Header from './Header'
-import Main from './Main'
-import Footer from './Footer'
-import Home from './PAGES/Home';
-import {Fragment} from 'react'
 
 
-import Root from './PAGES/Root';
-//REACT ROUTER DOM
-import {createBrowserRouter, RouterProvider, json} from 'react-router-dom'
-
-//COMPONENTS 
-import AboutMe from './COMPONENTS/AboutMe';
-import MyWork from './COMPONENTS/MyWork';
-import Contact from './COMPONENTS/Contact';
-import HeaderImg from './COMPONENTS/HeaderImg';
-
-
-//PAGES 
+//PAGES
+import Root from "./PAGES/Root";
+import AboutMe from './PAGES/AboutMe';
+import MyWork from './PAGES/MyWork';
+import Contact from './PAGES/Contact';
+import HeaderImg from './PAGES/HeaderImg';
 import DataPrivacy from './PAGES/DataPrivacy';
+import Impressum from './PAGES/Impressum'
+
+
+//SEO
+import { Helmet } from 'react-helmet';
 
 
 const router = createBrowserRouter([
@@ -36,54 +31,47 @@ const router = createBrowserRouter([
         element: <HeaderImg/>
       },
       {
-        path: '/aboutme',
+        path: '/über-mich',
         element: <AboutMe/>
       },
       {
-        path: '/mywork',
+        path: '/meine-dienstleistungen',
         element: <MyWork/>,
         
       },
       {
-        path: '/contact',
+        path: '/kontakt',
         element: <Contact/>
       },
       {
-        path: '/dataprivacy',
+        path: '/datensicherheit',
         element: <DataPrivacy/>
-
+      },
+      {
+        path: '/impressum',
+        element: <Impressum/>
       }
     ] 
 
   },
-  /*
-  {
-    path: '/aboutme',
-    element: <AboutMe/>
-  },
-  {
-    path: '/mywork',
-    element: <MyWork/>
-  }'/'
-  */
+  
 ])
 
 
 function App() {
 
-
-
-
   return (
-    <Fragment>
+  
 
       <RouterProvider router={router}>
+        <Helmet>
+          <title> Hebamme in Hamburg: Shaana Brown Näckler</title>
+        </Helmet>
 
       </RouterProvider>
-
       
 
-    </Fragment>
+
     
   );
 }

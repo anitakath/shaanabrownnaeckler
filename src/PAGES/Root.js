@@ -1,36 +1,26 @@
 
 import {Outlet} from 'react-router-dom'
 
-import Header from '../Header'
-import Footer from '../Footer'
+import Header from '../COMPONENTS/Header'
+import Footer from '../COMPONENTS/Footer'
 
-
-import header from '../Shaana/IMG_0014.jpg'
-import styles from '../STYLES/Header.module.css'
 
 
 function Root(){
 
-/*
-    <div>
-    <img src={header} className={styles.headerImage} alt="header"/>
-
-</div> */
 
     return(
         <div>
-            <div>
-           
+            <div>      
                 <Header/>
-               
-
             </div>
 
 
             <main>
-                <Outlet/>
-               
+                <Outlet/> 
             </main>
+
+            
             <div>
                 <Footer/>
             </div>
