@@ -39,10 +39,10 @@ function Navigation (){
            
            
             <ul className={styles.navigation}>
-                <li  data-aos="fade-left" data-aos-duration="1500" ><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/über-mich" end> ÜBER MICH </NavLink>  </li>
-                <li  data-aos="fade-left" data-aos-duration="1500" data-aos-delay="200"><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/meine-dienstleistungen" end> MEINE DIESTLEISTUNGEN </NavLink> </li>
-                <li  data-aos="fade-left" data-aos-duration="1500" data-aos-delay="400"><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/kontakt" end> KONTAKT </NavLink> </li>
-                <li  data-aos="fade-left" data-aos-duration="1500" data-aos-delay="600"><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/" end> STARTSEITE </NavLink></li>
+                <li  data-aos="fade-left" data-aos-duration="1500" ><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/shaanabrownnaeckler/über-mich" end> ÜBER MICH </NavLink>  </li>
+                <li  data-aos="fade-left" data-aos-duration="1500" data-aos-delay="200"><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/shaanabrownnaeckler/meine-dienstleistungen" end> MEINE DIESTLEISTUNGEN </NavLink> </li>
+                <li  data-aos="fade-left" data-aos-duration="1500" data-aos-delay="400"><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/shaanabrownnaeckler/kontakt" end> KONTAKT </NavLink> </li>
+                <li  data-aos="fade-left" data-aos-duration="1500" data-aos-delay="600"><NavLink className={({isActive}) => isActive ? styles.linkActive : styles.linkInactive} to="/shaanabrownnaeckler" end> STARTSEITE </NavLink></li>
                   
 
           
