@@ -42,7 +42,7 @@ function AboutMe() {
           >
             <h1> Meine Hebammenarbeit </h1>
             <p className={styles.paragraph}>
-              mein Fokus als Hebamme liegt auf der Betreuung während der
+              Mein Fokus als Hebamme liegt auf der Betreuung während der
               Schwangerschaft sowie in der Zeit nach der Geburt. Um eine
               ganzheitliche und moderne Betreuung zu ermöglichen, verbinde ich
               traditionelles Hebammenwissen mit den neuesten Erkenntnissen der

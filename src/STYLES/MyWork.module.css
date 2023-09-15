@@ -17,7 +17,6 @@
 
 .myWorkTitle{
     text-align: center;
-    height: 60px;
     padding: 10px;
     font-weight: bolder;
     font-size: clamp(1.8rem, 2.6vw, 2rem);
@@ -174,9 +173,7 @@
 
 @media only screen and (max-width: 600px){
 
-    .myWorkTitle{
-         margin-bottom: 60px;
-    }
+ 
 
     .myWorkSubtitle{
         text-align: left;

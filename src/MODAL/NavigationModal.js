@@ -42,16 +42,16 @@ function Modal(props){
             <div className="navigationModal" id="navigationModal" data-aos="fade-down"  data-aos-duration="400">
                 <ul>
                     <li> 
-                        <NavLink  className={({isActive}) => isActive ? 'active' : 'inactive'} to="/über-mich" onClick={mobileNavigationHandler} end> ÜBER MICH </NavLink>
+                        <NavLink  className={({isActive}) => isActive ? 'active' : 'inactive'} to="/shaanabrownnaeckler/über-mich" onClick={mobileNavigationHandler} end> ÜBER MICH </NavLink>
                     </li>
                     <li>  
-                        <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to="/meine-dienstleistungen" onClick={mobileNavigationHandler} end> MEINE DIENSTLEISTUNGEN </NavLink>
+                        <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to="/shaanabrownnaeckler/meine-dienstleistungen" onClick={mobileNavigationHandler} end> MEINE DIENSTLEISTUNGEN </NavLink>
                     </li>
                     <li>
-                        <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to="/kontakt" onClick={mobileNavigationHandler} end> KONTAKT </NavLink>
+                        <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to="/shaanabrownnaeckler/kontakt" onClick={mobileNavigationHandler} end> KONTAKT </NavLink>
                     </li>
                     <li>
-                        <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to="/"  onClick={mobileNavigationHandler} end> STARTSEITE</NavLink>
+                        <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to="/shaanabrownnaeckler"  onClick={mobileNavigationHandler} end> STARTSEITE</NavLink>
                     </li>
                 </ul>
               

@@ -211,7 +211,7 @@ function Contact(){
 
       <div className={styles.contactContainer}>
         <h1 data-aos="zoom-in" data-aos-duration="1500">
-          Kontaktiere mich gern
+          Kontaktiere mich 
         </h1>
         <p data-aos="zoom-in" data-aos-duration="1500">
           
