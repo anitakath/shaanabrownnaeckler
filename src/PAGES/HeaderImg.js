@@ -11,7 +11,7 @@ import 'aos/dist/aos.css';
 
 
 // IMAGES
-import header from '../Shaana/air.jpg'
+import header from '../Shaana/titleee.jpeg'
 import headerMobile from  '../Shaana/mobileHeader.jpg'
 
 //SEO
