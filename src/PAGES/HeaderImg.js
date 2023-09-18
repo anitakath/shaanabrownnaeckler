@@ -15,7 +15,7 @@ import header from '../Shaana/title.jpeg'
 import headerMobile from  '../Shaana/mobileHeader.jpg'
 
 //SEO
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function HeaderImg(){
 
@@ -26,19 +26,21 @@ function HeaderImg(){
 
     return (
       <div className={styles.headerImgContainer}>
-        <Helmet>
-          <title> Hebamme in Hamburg: Shaana Brown Näckler</title>
-          <meta 
-            name=" description " 
-            content=" erhalte Informationen über die Betreuungsmöglichkeiten durch die Hebamme Shaana Brown Näckler in Hamburg " 
-          />
-          <meta 
-            name="keywords" 
-            content="Hebamme, Hamburg, Altona, Eimsbüttel, Eppendorf, Sternschanze, St. Pauli, Ottensen, Bahrenfeld, Shaana Brown Näckler, Schwangerenvorsorge, Wochenbett, Stillzeit, Pinard-Rohr, Baby, Babypflege, Schwangerschaft, 
+        <HelmetProvider>
+          <Helmet>
+            <title> Hebamme in Hamburg: Shaana Brown Näckler</title>
+            <meta
+              name=" description "
+              content=" erhalte Informationen über die Betreuungsmöglichkeiten durch die Hebamme Shaana Brown Näckler in Hamburg "
+            />
+            <meta
+              name="keywords"
+              content="Hebamme, Hamburg, Altona, Eimsbüttel, Eppendorf, Sternschanze, St. Pauli, Ottensen, Bahrenfeld, Shaana Brown Näckler, Schwangerenvorsorge, Wochenbett, Stillzeit, Pinard-Rohr, Baby, Babypflege, Schwangerschaft, 
             Schwangerschaftsbetreuung, Geburtsvorbereitung, Wochenbettbetreuung, Stillberatung, Babymassage, Elternberatung, Geburtsbegleitung, Familienplanung, Nachsorge, Hebammenbetreuung, Wochenbettbetreuung für zu Hause, Beratung
             bei Schwangerschaftsbeschwerden"
-          />
-        </Helmet>
+            />
+          </Helmet>
+        </HelmetProvider>
 
         <img
           src={header}

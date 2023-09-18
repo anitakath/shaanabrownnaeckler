@@ -22,7 +22,7 @@ import WB from '../Shaana/IMG_3675.jpg'
 
 
 //SEO 
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function MyWork(){
 
@@ -32,43 +32,34 @@ function MyWork(){
     }, [])
 
 
-    useEffect(()=>{
-       let first_Paragraph = document.getElementById("first_Paragraph");
-       console.log(first_Paragraph);
-       const hyphenatedText = first_Paragraph.textContent.replace(
-         /([a-z])([A-Z])/g,
-         "$1-$2"
-       );
-       first_Paragraph = hyphenatedText;
-
-    }, [])
      
   
 
     return (
       <div className={styles.sectionContainer}>
-        <Helmet>
-          <title>
-            Betreuungsmöglichkeiten der Hebamme Shaana Brown Näckler
-          </title>
-          <meta
-            name=" description "
-            content=" erhalte Informationen über die Betreuungsmöglichkeiten durch die Hebamme Shaana Brown Näckler in Hamburg "
-          />
-          <meta
-            name="keywords"
-            content="Hebamme, Hamburg, Altona, Eimsbüttel, Eppendorf, Sternschanze, St. Pauli, Ottensen, Bahrenfeld, Shaana Brown Näckler, Schwangerenvorsorge, Wochenbett, Stillzeit, Pinard-Rohr, Baby, Babypflege, Schwangerschaft, 
+        <HelmetProvider>
+          <Helmet>
+            <title>
+              Betreuungsmöglichkeiten der Hebamme Shaana Brown Näckler
+            </title>
+            <meta
+              name=" description "
+              content=" erhalte Informationen über die Betreuungsmöglichkeiten durch die Hebamme Shaana Brown Näckler in Hamburg "
+            />
+            <meta
+              name="keywords"
+              content="Hebamme, Hamburg, Altona, Eimsbüttel, Eppendorf, Sternschanze, St. Pauli, Ottensen, Bahrenfeld, Shaana Brown Näckler, Schwangerenvorsorge, Wochenbett, Stillzeit, Pinard-Rohr, Baby, Babypflege, Schwangerschaft, 
             Schwangerschaftsbetreuung, Geburtsvorbereitung, Wochenbettbetreuung, Stillberatung, Babymassage, Elternberatung, Geburtsbegleitung, Familienplanung, Nachsorge, Hebammenbetreuung, Wochenbettbetreuung für zu Hause, Beratung
             bei Schwangerschaftsbeschwerden"
-          />
-        </Helmet>
+            />
+          </Helmet>
+        </HelmetProvider>
 
         <div className={styles.myWorkContainer}>
           <h1
             className={styles.myWorkTitle}
             data-aos="zoom-in"
             data-aos-duration="1000"
-            
           >
             Gerne begleite ich Dich in der Schwangerschaft, im Wochenbett und in
             der Stillzeit
@@ -86,53 +77,50 @@ function MyWork(){
             Gesundheit und die Deines Babys. 
           </p>
 
-         
-            <div className={styles.fieldA}>
-              <div
-                className={styles.text}
-                data-aos="fade-left"
-                data-aos-duration="2000"
-              >
-                <h1> Schwangerenvorsorge </h1>
-                <p id="first_Paragraph">
-                  Ich führe eigenständig und in Zusammenarbeit mit der
-                  betreuenden Gynäkologin oder dem betreuenden Gynäkologen
-                  Schwangerenvorsorgen durch. Dabei lege ich großen Wert auf
-                  eine ganzheitliche Betreuung, die sowohl den
-                  Mutterschaftsrichtlinien als auch internationalen Leitlinien
-                  entspricht.
-                  <br />
-                  <br />
-                  Zu jeder Hebammenvorsorge gehört eine körperliche
-                  Untersuchung, die Folgendes beinhaltet:
-                </p>
-                <ul>
-                  <li> Ertasten der Lage und Größe des Babys </li>
-                  <li>
-                    Messen deines Bauchumfangs und des Symphysen-Fundus-Abstands{" "}
-                  </li>
-                  <li> Hören der Herztöne des Babys </li>
-                  <li> Messung deines Blutdrucks </li>
-                  <li> Untersuchungen des Urins </li>
-                  <li> Blutuntersuchungen </li>
-                  <li> Beobachtung des Allgemeinbefindens </li>
-                </ul>
+          <div className={styles.fieldA}>
+            <div
+              className={styles.text}
+              data-aos="fade-left"
+              data-aos-duration="2000"
+            >
+              <h1> Schwangerenvorsorge </h1>
+              <p id="first_Paragraph">
+                Ich führe eigenständig und in Zusammenarbeit mit der betreuenden
+                Gynäkologin oder dem betreuenden Gynäkologen
+                Schwangerenvorsorgen durch. Dabei lege ich großen Wert auf eine
+                ganzheitliche Betreuung, die sowohl den Mutterschaftsrichtlinien
+                als auch internationalen Leitlinien entspricht.
                 <br />
                 <br />
-              </div>
-              <div className={styles.imgContainer}>
-                <img
-                  src={SVI}
-                  className={styles.firstImage}
-                  alt="something"
-                  aria-label="something"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay="500"
-                />
-              </div>
+                Zu jeder Hebammenvorsorge gehört eine körperliche Untersuchung,
+                die Folgendes beinhaltet:
+              </p>
+              <ul>
+                <li> Ertasten der Lage und Größe des Babys </li>
+                <li>
+                  Messen deines Bauchumfangs und des Symphysen-Fundus-Abstands{" "}
+                </li>
+                <li> Hören der Herztöne des Babys </li>
+                <li> Messung deines Blutdrucks </li>
+                <li> Untersuchungen des Urins </li>
+                <li> Blutuntersuchungen </li>
+                <li> Beobachtung des Allgemeinbefindens </li>
+              </ul>
+              <br />
+              <br />
             </div>
-       
+            <div className={styles.imgContainer}>
+              <img
+                src={SVI}
+                className={styles.firstImage}
+                alt="something"
+                aria-label="something"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="500"
+              />
+            </div>
+          </div>
 
           <div className={styles.fieldB}>
             <div className={styles.imgContainer}>
@@ -237,7 +225,10 @@ function MyWork(){
                 Zögere nicht, mich zu kontaktieren, um weitere Informationen zu
                 erhalten.
               </p>
-              <Link to="/shaanabrownnaeckler/kontakt" className={styles.contactLink}>
+              <Link
+                to="/shaanabrownnaeckler/kontakt"
+                className={styles.contactLink}
+              >
                 Zum Kontaktformular{" "}
               </Link>
             </div>

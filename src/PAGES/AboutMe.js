@@ -9,7 +9,7 @@ import "aos/dist/aos.css";
 import img from "../Shaana/aboutMeImg.jpg";
 
 //SEO
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider} from "react-helmet-async";
 
 function AboutMe() {
   useEffect(() => {
@@ -18,19 +18,21 @@ function AboutMe() {
 
   return (
     <div className={styles.sectionContainer}>
-      <Helmet>
-        <title> Shaanas Werdegang und Arbeit als Hebamme </title>
-        <meta
-          name=" description "
-          content=" erhalte Informationen über den Werdegang und die Arbeit als Hebamme von Shaana Brown Näckler in Hamburg "
-        />
-        <meta
-          name="keywords"
-          content="Hebamme, Hamburg, Altona, Eimsbüttel, Eppendorf, Sternschanze, St. Pauli, Ottensen, Bahrenfeld, Shaana Brown Näckler, Schwangerenvorsorge, Wochenbett, Stillzeit, Pinard-Rohr, Baby, Babypflege, Schwangerschaft, 
+      <HelmetProvider>
+        <Helmet>
+          <title> Shaanas Werdegang und Arbeit als Hebamme </title>
+          <meta
+            name=" description "
+            content=" erhalte Informationen über den Werdegang und die Arbeit als Hebamme von Shaana Brown Näckler in Hamburg "
+          />
+          <meta
+            name="keywords"
+            content="Hebamme, Hamburg, Altona, Eimsbüttel, Eppendorf, Sternschanze, St. Pauli, Ottensen, Bahrenfeld, Shaana Brown Näckler, Schwangerenvorsorge, Wochenbett, Stillzeit, Pinard-Rohr, Baby, Babypflege, Schwangerschaft, 
             Schwangerschaftsbetreuung, Geburtsvorbereitung, Wochenbettbetreuung, Stillberatung, Babymassage, Elternberatung, Geburtsbegleitung, Familienplanung, Nachsorge, Hebammenbetreuung, Wochenbettbetreuung für zu Hause, Beratung
             bei Schwangerschaftsbeschwerden"
-        />
-      </Helmet>
+          />
+        </Helmet>
+      </HelmetProvider>
 
       <div className={styles.aboutMeContainer}>
         <div className={styles.aboutMeTextWrapper}>

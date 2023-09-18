@@ -18,8 +18,8 @@ import useInput from '../HOOKS/use-input';
 import { useForm, ValidationError } from '@formspree/react';
 
 //SEO
-import Helmet from 'react-helmet';
 
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 
 function Contact(){
@@ -195,26 +195,27 @@ function Contact(){
 
   return (
     <div className={styles.sectionContainer}>
-      <Helmet>
-        <title> Kontaktformular der Hebamme Shaana Brown Näckler </title>
-        <meta
-          name=" description "
-          content=" kontaktiere die Hebamme Shaana Brown Näckler in Hamburg "
-        />
-        <meta
-          name="keywords"
-          content="Hebamme, Hamburg, Altona, Eimsbüttel, Eppendorf, Sternschanze, St. Pauli, Ottensen, Bahrenfeld, Shaana Brown Näckler, Schwangerenvorsorge, Wochenbett, Stillzeit, Pinard-Rohr, Baby, Babypflege, Schwangerschaft, 
+      <HelmetProvider>
+        <Helmet>
+          <title> Kontaktformular der Hebamme Shaana Brown Näckler </title>
+          <meta
+            name=" description "
+            content=" kontaktiere die Hebamme Shaana Brown Näckler in Hamburg "
+          />
+          <meta
+            name="keywords"
+            content="Hebamme, Hamburg, Altona, Eimsbüttel, Eppendorf, Sternschanze, St. Pauli, Ottensen, Bahrenfeld, Shaana Brown Näckler, Schwangerenvorsorge, Wochenbett, Stillzeit, Pinard-Rohr, Baby, Babypflege, Schwangerschaft, 
             Schwangerschaftsbetreuung, Geburtsvorbereitung, Wochenbettbetreuung, Stillberatung, Babymassage, Elternberatung, Geburtsbegleitung, Familienplanung, Nachsorge, Hebammenbetreuung, Wochenbettbetreuung für zu Hause, Beratung
             bei Schwangerschaftsbeschwerden"
-        />
-      </Helmet>
+          />
+        </Helmet>
+      </HelmetProvider>
 
       <div className={styles.contactContainer}>
         <h1 data-aos="zoom-in" data-aos-duration="1500">
-          Kontaktiere mich 
+          Kontaktiere mich
         </h1>
         <p data-aos="zoom-in" data-aos-duration="1500">
-          
           Deine Daten werde ich nur für die von dir gewünschten Wünsche nutzen
           und zu keinem Zeitpunkt an Dritte übermitteln. <br />
           Erfahre mehr unter
