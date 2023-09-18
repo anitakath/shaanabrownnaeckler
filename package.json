@@ -15,7 +15,6 @@
     "aos": "^3.0.0-beta.6",
     "chai": "^4.3.8",
     "hyphenation.de": "^0.2.1",
-    "jest": "^27.5.1",
     "jquery": "^3.7.0",
     "jquery-ui": "^1.13.2",
     "jquery-ui-dist": "^1.13.2",
@@ -56,6 +55,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.0.0"
+    "@babel/preset-react": "^7.22.15",
+    "gh-pages": "^6.0.0",
+    "jest": "^27.5.1"
   }
 }

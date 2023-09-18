@@ -242,9 +242,6 @@ function MyWork(){
               </Link>
             </div>
           </div>
-          <div className={styles.space}>
-             
-          </div>
         </div>
       </div>
     );

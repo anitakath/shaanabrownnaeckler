@@ -8,10 +8,7 @@
     overflow: scroll;
     display: flex;
     justify-content: center;
-    background-color:  rgba(225,166,173, 0.4);
 }
-
-
 
 .aboutDataprivacyContainer{
     display: flex;

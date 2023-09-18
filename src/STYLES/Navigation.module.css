@@ -26,6 +26,7 @@
     font-weight: bolder;
     text-decoration: none;
     text-align: center;
+
 }
 
 .linkInactive{
@@ -33,6 +34,8 @@
     color: hsl(0, 0%, 35%);
     text-decoration: none;
     text-align: center;
+    text-weight: bolder;
+
 }
 
 

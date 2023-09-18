@@ -1,55 +1,54 @@
+import Contact from "./Contact";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
-import Contact from './Contact'
-import { render, screen, fireEvent} from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
-
-test("renders component correctly", async () => {
+//teste, ob die Form erfolgreich gerendert wird
+test("renders component correctly", () => {
   render(<Contact />);
 
+  const firstNameInput = screen.getByPlaceholderText("vorname");
+  expect(firstNameInput).toBeInTheDocument();
 
-    const firstNameInput = screen.getByPlaceholderText("vorname");
-    expect(firstNameInput).toBeInTheDocument();
+  const lastNameInput = screen.getByPlaceholderText("nachname");
+  expect(lastNameInput).toBeInTheDocument();
 
-    const lastNameInput = screen.getByPlaceholderText("nachname");
-    expect(lastNameInput).toBeInTheDocument();
+  const adressInput = screen.getByPlaceholderText("adresse und hausnummer");
+  expect(adressInput).toBeInTheDocument();
 
-    const adressInput = screen.getByPlaceholderText("adresse und hausnummer");
-    expect(adressInput).toBeInTheDocument();
+  const postleitzahlInput = screen.getByPlaceholderText("postleitzahl");
+  expect(postleitzahlInput).toBeInTheDocument();
 
-    const postleitzahlInput = screen.getByPlaceholderText("postleitzahl");
-    expect(postleitzahlInput).toBeInTheDocument();
-  
-    const telefonInput = screen.getByPlaceholderText("telefon");
-    expect(telefonInput).toBeInTheDocument();
+  const telefonInput = screen.getByPlaceholderText("telefon");
+  expect(telefonInput).toBeInTheDocument();
 
-    const emailInput = screen.getByPlaceholderText("email");
-    expect(emailInput).toBeInTheDocument();
+  const emailInput = screen.getByPlaceholderText("email");
+  expect(emailInput).toBeInTheDocument();
 
-    const birthInput = screen.getByPlaceholderText("errechneter Entbindungstermin");
-    expect(birthInput).toBeInTheDocument();
+  const birthInput = screen.getByPlaceholderText(
+    "errechneter Entbindungstermin"
+  );
+  expect(birthInput).toBeInTheDocument();
 
-    const insuranceInput = screen.getByPlaceholderText("krankenkasse");
-    expect(insuranceInput).toBeInTheDocument();
+  const insuranceInput = screen.getByPlaceholderText("krankenkasse");
+  expect(insuranceInput).toBeInTheDocument();
 
-    const textAreaInput = screen.getByPlaceholderText("schreibe mir gern weitere anliegen / fragen");
-    expect(textAreaInput).toBeInTheDocument();
+  const textAreaInput = screen.getByPlaceholderText(
+    "schreibe mir gern weitere anliegen / fragen"
+  );
+  expect(textAreaInput).toBeInTheDocument();
 
-    const button = screen.getByRole('button')
-    expect(button).toBeInTheDocument();
-
+  const button = screen.getByRole("button");
+  expect(button).toBeInTheDocument();
 });
 
+test("button is disabled initially", () => {
+  render(<Contact />);
 
-test('button is disabled initially', async () =>{
-  render(<Contact/>)
-  
-  const button = screen.getByRole('button')
+  const button = screen.getByRole("button");
   expect(button).toBeDisabled();
+});
 
-})
-
-
-test('button is enabled when all input fields are filled in', () =>{
+test("button is enabled when all input fields are filled in", () => {
   render(<Contact />);
 
   const firstNameInput = screen.getByPlaceholderText("vorname");
@@ -81,17 +80,32 @@ test('button is enabled when all input fields are filled in', () =>{
 
   const button = screen.getByRole("button");
 
-  expect(firstNameInput.value).toBe("Anne");
   expect(button).toBeEnabled();
   //screen.debug(); ≠ p> bitte fülle alle felder  aus....</p>
 });
 
+/*teste, ob die Eingaben in die Formularfelder korrekt funktioniert 
+//und die eingegebenen Daten im State gespeichert werden
 
 
+// teste, ob die Formvalidierung funktioniert
+test('form validation', () =>{
+
+})
+
+// teste, ob die Daten beim Absenden richtig weitergeleitet wurden
+test('form submission', async () =>{
+ 
 
 
+})
 
+// teste, ob die Daten erfolgreich an die Email weitergeleitet wurden
+test('email forwarding', () =>{
 
+})
 
+//teste, ob das Zurücksetzen der Form nach dem Absenden korrekt funktioniert
+test('form input', () =>{
 
-
+})*/

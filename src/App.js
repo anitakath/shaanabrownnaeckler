@@ -58,18 +58,12 @@ const router = createBrowserRouter([
 function App() {
 
   return (
-  
-
-      <RouterProvider router={router}>
-        <Helmet>
-          <title> Hebamme in Hamburg: Shaana Brown Näckler</title>
-        </Helmet>
-
-      </RouterProvider>
-      
-
-
-    
+    <RouterProvider router={router}>
+      <Helmet>
+        <title> Hebamme in Hamburg: Shaana Brown Näckler </title>
+      </Helmet>
+      <h1> HI</h1>
+    </RouterProvider>
   );
 }
 

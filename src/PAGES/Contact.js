@@ -52,15 +52,15 @@ function Contact(){
     inputBlurHandler: adressBlurHandler,
     valueIsValid: adressIsValid,
     style: adressStyle,
-  } = useInput((value) => value.trim() !== "" && value.length >= 4);
+  } = useInput((value) => value.trim() !== "" && value.length >= 4 );
 
   const {
     value: enteredPostal,
     changeValueHandler: postalChangeHandler,
     inputBlurHandler: postalBlurHandler,
     style: postalStyle,
-    //valueIsValid: postalIsValid
-  } = useInput((value) => value.trim() !== "" && value.length === 5);
+  } = useInput((value) => value !== NaN && value.length === 5);
+  console.log(enteredPostal)
 
   const {
     value: enteredTel,

@@ -105,10 +105,9 @@ function AboutMe() {
             className={styles.aboutMeImg}
             data-aos="fade-right"
             data-aos-duration="1000"
-            alt="Shaana Brown Näckler, Hebamme / midwife"
+            alt="picture of Shaana Brown Näckler, Hebamme / midwife"
           ></img>
         </div>
-        <div className={styles.space}></div>
       </div>
     </div>
   );
