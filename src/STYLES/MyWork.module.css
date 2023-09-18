@@ -1,4 +1,8 @@
+.sectionContainer{
+    background-color:  rgba(225,166,173, 0.4);
+    border: 2px solid rgba(225,166,173, 0.4);
 
+}
 
 .myWorkContainer{
     display: flex;

@@ -2,13 +2,13 @@
 
 .footerContainer{
     min-height: 5vh;
-    background-color: hsla(182, 25%, 100%, 0.5);
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color:  rgba(225,166,173, 1);
 }
 
 
