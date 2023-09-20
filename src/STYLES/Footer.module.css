@@ -11,6 +11,10 @@
     background-color:  rgba(225,166,173, 1);
 }
 
+.footerInformation{
+    margin: 20px;
+}
+
 
 .dataprivacyLink{
     color: #89CFF0;
@@ -22,16 +26,13 @@
     font-size: clamp(1rem, 3vw, 1.3rem);
 }
 
-.footerInformation{
-    margin: 20px;
-}
+
 
 
 @media screen and (max-width: 800px){
     .footerContainer{
         transition: 0.4s ease;
         padding: 20px;
-        flex-direction: column;
     }
 }
 

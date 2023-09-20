@@ -8,11 +8,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-
-
 // IMAGES
-import header from '../Shaana/title.jpeg'
-import headerMobile from  '../Shaana/mobileHeader.jpg'
+import header from '../Shaana/mobileImg.jpg'
+import headerMobile from  '../Shaana/mobileImg.jpg'
 
 //SEO
 import { Helmet, HelmetProvider } from "react-helmet-async";
