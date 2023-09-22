@@ -93,6 +93,7 @@
         height: 35px;
         z-index: 1000;
         position: relative;
+        right: 10px;
     }
 
     .menuBar:hover{
@@ -117,13 +118,9 @@
 }
 
 @media screen and (max-width: 600px){
-    .menuBar{
-        right: -4vw;
-    }
+  
 }
 
 @media screen and (max-width: 300px){
-    .menuBar{
-        right: -15vw;
-    }
+  
 }

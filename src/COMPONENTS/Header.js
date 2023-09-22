@@ -1,5 +1,5 @@
 
-//STYLES  && IMAGES
+//STYLES 
 import styles from '../STYLES/Header.module.css'
 
 
