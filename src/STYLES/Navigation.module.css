@@ -3,6 +3,7 @@
 .navigationContainer{
     width: 60vw;
     z-index: 100;
+    position: relative;
 }
 
 .navigation{
@@ -67,7 +68,7 @@
         transition: 0.4s ease;
         width: 75vw;
         display: flex;
-        justify-content: end;
+        justify-content: center;
     }
 
     .navigation{
@@ -75,14 +76,16 @@
     }
 
     .mobileNav{
+        width: 100%;
         transition: 0.4s ease;
         margin: 10px;
         padding: 5px;
         display: flex;
         justify-content: center;
         align-items: center;
-        position: relative;
-        right: 35px;
+        position: absolute;
+        right: 0px;
+        top: -35px;
         width: 40px;
         height: 40px;
         z-index: 100;
