@@ -23,31 +23,31 @@ import { Helmet } from 'react-helmet';
 
 const router = createBrowserRouter([
   {
-    path: "/shaanabrownnaeckler",
+    path: "/",
     element: <Root />,
     children: [
       {
-        path: "/shaanabrownnaeckler",
+        path: "/",
         element: <HeaderImg />,
       },
       {
-        path: "/shaanabrownnaeckler/über-mich",
+        path: "/über-mich",
         element: <AboutMe />,
       },
       {
-        path: "/shaanabrownnaeckler/meine-dienstleistungen",
+        path: "/meine-dienstleistungen",
         element: <MyWork />,
       },
       {
-        path: "/shaanabrownnaeckler/kontakt",
+        path: "/kontakt",
         element: <Contact />,
       },
       {
-        path: "/shaanabrownnaeckler/datensicherheit",
+        path: "/datensicherheit",
         element: <DataPrivacy />,
       },
       {
-        path: "/shaanabrownnaeckler/impressum",
+        path: "/impressum",
         element: <Impressum />,
       },
     ],
