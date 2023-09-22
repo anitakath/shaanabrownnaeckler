@@ -226,7 +226,7 @@ function MyWork(){
                 erhalten.
               </p>
               <Link
-                to="/shaanabrownnaeckler/kontakt"
+                to="/kontakt"
                 className={styles.contactLink}
               >
                 Zum Kontaktformular{" "}
