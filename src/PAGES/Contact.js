@@ -27,15 +27,12 @@ function Contact(){
     AOS.init();
   }, []);
 
-
-
-
   const {
     value: enteredFirstName,
     changeValueHandler: firstNameChangeHandler,
     inputBlurHandler: firstNameBlurHandler,
     valueIsValid: firstNameIsValid,
-    style: fNameStyle
+    style: fNameStyle,
   } = useInput((value) => value.trim() !== "" && value.length >= 2);
 
   const {
@@ -52,7 +49,7 @@ function Contact(){
     inputBlurHandler: adressBlurHandler,
     valueIsValid: adressIsValid,
     style: adressStyle,
-  } = useInput((value) => value.trim() !== "" && value.length >= 4 );
+  } = useInput((value) => value.trim() !== "" && value.length >= 4);
 
   const {
     value: enteredPostal,
@@ -60,7 +57,7 @@ function Contact(){
     inputBlurHandler: postalBlurHandler,
     style: postalStyle,
   } = useInput((value) => value !== NaN && value.length === 5);
-  console.log(enteredPostal)
+
 
   const {
     value: enteredTel,
@@ -98,7 +95,6 @@ function Contact(){
     month = "0" + month;
   }
 
-
   const currentDate = `${year}-${month}-${day}`;
 
   const maxDate = `${nextYear}-${month}-${day}`;
@@ -108,7 +104,6 @@ function Contact(){
     changeValueHandler: birthChangeHandler,
     inputBlurHandler: birthBlurHandler,
     style: birthStyle,
-   
   } = useInput((value) => value >= currentDate && value <= maxDate);
 
   /* value === $( "#datepicker" ).datepicker( "option", "dateFormat",'yy-mm-dd') */
@@ -127,17 +122,11 @@ function Contact(){
     inputBlurHandler: messageBlurHandler,
   } = useInput((value) => value.trim() !== "");
 
-
-
-
   const [checkboxCheck, setCheckboxCheck] = useState(false);
 
   const checkboxHandler = () => {
-    setCheckboxCheck(x => !x);
-   
+    setCheckboxCheck((x) => !x);
   };
-
-  
 
   const [formComplete, setFormComplete] = useState(false);
 
@@ -161,37 +150,99 @@ function Contact(){
     firstNameIsValid,
     lastNameIsValid,
     adressIsValid,
-    enteredPostal, 
+    enteredPostal,
     emailIsValid,
     telIsValid,
     insuranceIsValid,
   ]);
 
-
-
-
   // FORM BACKEND API FORMSPREE
-  const [state, handleSubmit] = useForm("xleypnqk");
+  const [state, handleSubmit] = useForm("myyqgqrr");
 
+  //SHAANA : xleypnqk
+  // ANNE: myyqgqrr
 
-  let btnText = "sende deine Anfrage"
+  let btnText = "sende deine Anfrage";
 
-  if(state.submitting){
-    btnText = " Anfrage wird gesendet"
+  if (state.submitting) {
+    btnText = " Anfrage wird gesendet";
   }
 
-  const submitFormHandler = () => {
+  const [response, setResponse] = useState('')
+  console.log(response)
 
-  
-    if (formComplete === true) {
-      handleSubmit();
-    } else{
-      return;
+   console.log(formComplete);
+
+
+
+
+
+  const submitFormHandler = async (e) => {
+
+    e.preventDefault();
+
+
+    const formData = {
+      vorname: enteredFirstName,
+      nachname: enteredLastName,
+      adresse: enteredAdress,
+      postleitzahl: enteredPostal,
+      telefonnummer: enteredTel,
+      email: enteredEmail,
+      geburtstermin: enteredBirth,
+      versicherung: enteredInsurance,
+      datensicherheit: checkboxCheck,
+    };
+
+    try {
+      const response = await fetch("/api/validate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if(response.ok){
+        setResponse(data.message);
+        //handleSubmit();
+ 
+
+      } else{
+        console.log(data.error)
+      }
+     
+    } catch (error) {
+      console.error(error)
+
     }
+
+ 
+
+    
+      /*
+
+      if (formComplete === true) {
+        handleSubmit();
+      } else {
+        return;
+      } 
+      */
+    
+
+    /*
+      action="https://formspree.io/f/myyqgqrr"
+      method="POST"
+    */
   };
 
 
-
+  /*
+      action="https://formspree.io/f/myyqgqrr"
+      method="POST"
+  */
 
   return (
     <div className={styles.sectionContainer}>
@@ -222,8 +273,11 @@ function Contact(){
         </p>
 
         <form
-          action="https://formspree.io/f/xleypnqk"
-          method="POST"
+          
+
+
+
+
           data-aos="fade-down"
           data-aos-duration="2000"
           data-aos-delay="500"
@@ -381,7 +435,9 @@ function Contact(){
             Bedingungen.
           </div>
 
-          <button disabled={!formComplete}> sende deine Anfrage </button>
+          <button type="submit" disabled={!formComplete}>
+            sende deine Anfrage
+          </button>
           {!formComplete && (
             <p className={styles.formInfos}>
               bitte fülle alle Felder mit den Sternchen unbedingt aus und
