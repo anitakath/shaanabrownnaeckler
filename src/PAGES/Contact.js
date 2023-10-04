@@ -210,7 +210,9 @@ function Contact(){
 
       if(response.ok){
         setResponse(data.message);
-        handleSubmit();
+        console.log(data.message)
+        setFormComplete(true)
+        console.log(formComplete)
  
 
       } else{
@@ -225,12 +227,27 @@ function Contact(){
  
 
     
-     
+      /*
 
+      if (formComplete === true) {
+        handleSubmit();
+      } else {
+        return;
+      } 
+      */
+    
+
+    /*
+      action="https://formspree.io/f/myyqgqrr"
+      method="POST"
+    */
   };
 
 
-
+  /*
+      action="https://formspree.io/f/myyqgqrr"
+      method="POST"
+  */
 
   return (
     <div className={styles.sectionContainer}>
@@ -261,8 +278,11 @@ function Contact(){
         </p>
 
         <form
-          action="https://formspree.io/f/myyqgqrr"
-          method="POST"
+          
+
+
+
+
           data-aos="fade-down"
           data-aos-duration="2000"
           data-aos-delay="500"
