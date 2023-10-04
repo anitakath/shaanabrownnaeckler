@@ -175,7 +175,8 @@ function Contact(){
 
 
 
-
+   console.log(enteredBirth)
+   console.log(enteredTel)
 
   const submitFormHandler = async (e) => {
 
