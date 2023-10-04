@@ -219,15 +219,11 @@ function Contact(){
 
     }
 
- 
-    useEffect(() => {
-       if (formComplete === true) {
-         handleSubmit();
-       } else {
-         return;
-       } 
-
-    }, [formComplete]);
+  if (formComplete === true) {
+    handleSubmit();
+  } else {
+    return;
+  } 
 
     
     
