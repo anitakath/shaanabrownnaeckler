@@ -168,11 +168,6 @@ function Contact(){
     btnText = " Anfrage wird gesendet";
   }
 
-  const [response, setResponse] = useState('')
-  console.log(response)
-
-   
-
 
 
 
@@ -209,7 +204,7 @@ function Contact(){
       const data = await response.json();
 
       if(response.ok){
-        setResponse(data.message);
+    
         console.log(data.message)
         setFormComplete(true)
         console.log(formComplete)
@@ -225,22 +220,20 @@ function Contact(){
     }
 
  
+    useEffect(() => {
+       if (formComplete === true) {
+         handleSubmit();
+       } else {
+         return;
+       } 
+
+    }, [formComplete]);
 
     
-      /*
-
-      if (formComplete === true) {
-        handleSubmit();
-      } else {
-        return;
-      } 
-      */
+    
     
 
-    /*
-      action="https://formspree.io/f/myyqgqrr"
-      method="POST"
-    */
+    
   };
 
 
@@ -278,11 +271,8 @@ function Contact(){
         </p>
 
         <form
-          
-
-
-
-
+          action="https://formspree.io/f/myyqgqrr"
+          method="POST"
           data-aos="fade-down"
           data-aos-duration="2000"
           data-aos-delay="500"
