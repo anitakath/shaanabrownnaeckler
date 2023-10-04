@@ -191,6 +191,7 @@ function Contact(){
       email: enteredEmail,
       geburtstermin: enteredBirth,
       versicherung: enteredInsurance,
+      nachricht: enteredMessage,
       datensicherheit: checkboxCheck,
     };
 
