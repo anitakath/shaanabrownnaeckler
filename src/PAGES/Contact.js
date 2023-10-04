@@ -171,12 +171,10 @@ function Contact(){
   const [response, setResponse] = useState('')
   console.log(response)
 
-   console.log(formComplete);
+   
 
 
 
-   console.log(enteredBirth)
-   console.log(enteredTel)
 
   const submitFormHandler = async (e) => {
 
@@ -212,7 +210,7 @@ function Contact(){
 
       if(response.ok){
         setResponse(data.message);
-        //handleSubmit();
+        handleSubmit();
  
 
       } else{
@@ -227,27 +225,12 @@ function Contact(){
  
 
     
-      /*
+     
 
-      if (formComplete === true) {
-        handleSubmit();
-      } else {
-        return;
-      } 
-      */
-    
-
-    /*
-      action="https://formspree.io/f/myyqgqrr"
-      method="POST"
-    */
   };
 
 
-  /*
-      action="https://formspree.io/f/myyqgqrr"
-      method="POST"
-  */
+
 
   return (
     <div className={styles.sectionContainer}>
@@ -278,11 +261,8 @@ function Contact(){
         </p>
 
         <form
-          
-
-
-
-
+          action="https://formspree.io/f/myyqgqrr"
+          method="POST"
           data-aos="fade-down"
           data-aos-duration="2000"
           data-aos-delay="500"
