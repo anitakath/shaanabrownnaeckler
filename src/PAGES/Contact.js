@@ -173,7 +173,7 @@ function Contact(){
 
   const submitFormHandler = async (e) => {
 
-    e.preventDefault();
+    
 
 
     const formData = {
@@ -208,6 +208,7 @@ function Contact(){
         console.log(data.message)
         setFormComplete(true)
         console.log(formComplete)
+        handleSubmit();
  
 
       } else{
@@ -219,11 +220,13 @@ function Contact(){
 
     }
 
+    /*
   if (formComplete === true) {
     handleSubmit();
   } else {
     return;
   } 
+  */
 
     
     
