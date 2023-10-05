@@ -61,8 +61,19 @@ function App() {
     <RouterProvider router={router}>
       <Helmet>
         <title> Hebamme in Hamburg: Shaana Brown Näckler </title>
+        <meta name="keywords" content="Hebamme, Hamburg, Altona, Eimsbüttel, Eppendorf, Sternschanze,
+          St. Pauli, Ottensen, Bahrenfeld, Shaana Brown Näckler,
+          Schwangerenvorsorge, Wochenbett, Stillzeit, Pinard-Rohr, Baby,
+          Babypflege, Schwangerschaft, Schwangerschaftsbetreuung,
+          Geburtsvorbereitung, Wochenbettbetreuung, Stillberatung, Babymassage,
+          Elternberatung, Geburtsbegleitung, Familienplanung, Nachsorge,
+          Hebammenbetreuung, Wochenbettbetreuung für zu Hause, Beratung bei
+          Schwangerschaftsbeschwerden"/>
+        <meta
+          name="description "
+          content="offizielle Homepage der Hebamme Shaana Brown Näckler, Hamburg"
+        />
       </Helmet>
-      <h1> HI</h1>
     </RouterProvider>
   );
 }
