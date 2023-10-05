@@ -48,7 +48,7 @@ function Modal(props){
                         <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to="/meine-dienstleistungen" onClick={mobileNavigationHandler} end> MEINE DIENSTLEISTUNGEN </NavLink>
                     </li>
                     <li>
-                        <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to="/shaanabrownnaeckler/kontakt" onClick={mobileNavigationHandler} end> KONTAKT </NavLink>
+                        <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to="/kontakt" onClick={mobileNavigationHandler} end> KONTAKT </NavLink>
                     </li>
                     <li>
                         <NavLink className={({isActive}) => isActive ? 'active' : 'inactive'} to="/"  onClick={mobileNavigationHandler} end> STARTSEITE</NavLink>
