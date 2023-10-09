@@ -4,5 +4,5 @@
 # Das "Disallow:"-Statement erlaubt allen Bots den Zugriff auf alle Teile Ihrer Website.
 #Der "Sitemap:"-Eintrag gibt den Pfad zur Sitemap-Datei an. 
 User-agent: *
-Disallow:
+Allow: /
 Sitemap: https://admirable-queijadas-f1b25d.netlify.app/sitemap.xml
