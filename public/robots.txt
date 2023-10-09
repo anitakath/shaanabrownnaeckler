@@ -1,3 +1,8 @@
+# löschenhttps://www.robotstxt.org/robotstxt.html  Google Search Console darf Website Crawlen!
 
+# Der Eintrag "User-agent: *" gibt an, dass diese Regeln für alle Suchmaschinenbots gelten sollen. 
+# Das "Disallow:"-Statement erlaubt allen Bots den Zugriff auf alle Teile Ihrer Website.
+#Der "Sitemap:"-Eintrag gibt den Pfad zur Sitemap-Datei an. 
 User-agent: *
 Disallow:
+Sitemap: https://admirable-queijadas-f1b25d.netlify.app/sitemap.xml
