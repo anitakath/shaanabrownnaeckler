@@ -1,0 +1,22 @@
+/*
+
+const SitemapGenerator = require("sitemap-generator");
+
+const generator = SitemapGenerator(
+  "https://admirable-queijadas-f1b25d.netlify.app/",
+  {
+    stripQuerystring: false,
+    filepath: "./public/sitemap.xml",
+  }
+);
+
+generator.start();
+generator.on("done", () => {
+  console.log("Sitemap wurde erfolgreich erstellt!");
+});
+
+
+--- dann im Terminal folgenden Befehl:
+--- node public/sitemap.xml 
+
+*/

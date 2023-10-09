@@ -26,6 +26,7 @@
     "react-router-dom": "^6.13.0",
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
+    "sitemap-generator": "^8.5.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
