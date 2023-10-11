@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         element: <HeaderImg />,
       },
       {
-        path: "/über-mich",
+        path: "/ueber-mich",
         element: <AboutMe />,
       },
       {
