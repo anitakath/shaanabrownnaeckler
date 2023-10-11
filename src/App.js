@@ -9,7 +9,7 @@ import Layout from "./COMPONENTS/Layout";
 import HeaderImg from "./COMPONENTS/HeaderImg";
 
 //PAGES
-import AboutMe from "./pages/uebermich";
+import AboutMe from './pages/AboutMe'
 import MyWork from "./pages/meinedienstleistungen";
 import Contact from "./pages/kontakt";
 import DataPrivacy from "./pages/datenschutz";
