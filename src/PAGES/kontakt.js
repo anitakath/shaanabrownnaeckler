@@ -1,28 +1,28 @@
-import React, { useContext } from "react";
-import { Link, redirect, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-
-
-import Layout from "../COMPONENTS/Layout";
+import {Link, redirect, useNavigate} from 'react-router-dom'
+import {useEffect, useState} from 'react'
 
 
 //STYLES & ANIMATIONS
-import styles from "../STYLES/Contact.module.css";
-
+import styles from '../STYLES/Contact.module.css'
+import '../STYLES/Input.css'
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
+
 //HOOKS
-import useInput from "../HOOKS/use-input";
+import useInput from '../HOOKS/use-input';
+
 
 // BACKEND API FORM
-import { useForm, ValidationError } from "@formspree/react";
+import { useForm, ValidationError } from '@formspree/react';
 
 //SEO
 
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
-function Contact() {
+
+function Contact(){
   useEffect(() => {
     AOS.init();
   }, []);
@@ -57,6 +57,7 @@ function Contact() {
     inputBlurHandler: postalBlurHandler,
     style: postalStyle,
   } = useInput((value) => value !== NaN && value.length === 5);
+
 
   const {
     value: enteredTel,
@@ -167,7 +168,14 @@ function Contact() {
     btnText = " Anfrage wird gesendet";
   }
 
+
+
+
   const submitFormHandler = async (e) => {
+
+    
+
+
     const formData = {
       vorname: enteredFirstName,
       nachname: enteredLastName,
@@ -195,16 +203,21 @@ function Contact() {
 
       const data = await response.json();
 
-      if (response.ok) {
-        console.log(data.message);
-        setFormComplete(true);
-        console.log(formComplete);
+      if(response.ok){
+    
+        console.log(data.message)
+        setFormComplete(true)
+        console.log(formComplete)
         handleSubmit();
-      } else {
-        console.log(data.error);
+ 
+
+      } else{
+        console.log(data.error)
       }
+     
     } catch (error) {
-      console.error(error);
+      console.error(error)
+
     }
 
     /*
@@ -214,7 +227,14 @@ function Contact() {
     return;
   } 
   */
+
+    
+    
+    
+
+    
   };
+
 
   /*
       action="https://formspree.io/f/myyqgqrr"
@@ -222,224 +242,206 @@ function Contact() {
   */
 
   return (
-    <Layout>
-      <div className={styles.sectionContainer}>
-        <HelmetProvider>
-          <Helmet>
-            <title> Kontaktformular der Hebamme Shaana Brown Näckler </title>
-            <meta
-              name=" description "
-              content=" kontaktiere die Hebamme Shaana Brown Näckler in Hamburg "
-            />
-            <meta
-              name="keywords"
-              content="Hebamme, Hamburg, Altona, Eimsbüttel, Eppendorf, Sternschanze, St. Pauli, Ottensen, Bahrenfeld, Shaana Brown Näckler, Schwangerenvorsorge, Wochenbett, Stillzeit, Pinard-Rohr, Baby, Babypflege, Schwangerschaft, 
+    <div className={styles.sectionContainer}>
+      <HelmetProvider>
+        <Helmet>
+          <title> Kontaktformular der Hebamme Shaana Brown Näckler </title>
+          <meta
+            name=" description "
+            content=" kontaktiere die Hebamme Shaana Brown Näckler in Hamburg "
+          />
+          <meta
+            name="keywords"
+            content="Hebamme, Hamburg, Altona, Eimsbüttel, Eppendorf, Sternschanze, St. Pauli, Ottensen, Bahrenfeld, Shaana Brown Näckler, Schwangerenvorsorge, Wochenbett, Stillzeit, Pinard-Rohr, Baby, Babypflege, Schwangerschaft, 
             Schwangerschaftsbetreuung, Geburtsvorbereitung, Wochenbettbetreuung, Stillberatung, Babymassage, Elternberatung, Geburtsbegleitung, Familienplanung, Nachsorge, Hebammenbetreuung, Wochenbettbetreuung für zu Hause, Beratung
             bei Schwangerschaftsbeschwerden"
-            />
-          </Helmet>
-        </HelmetProvider>
+          />
+        </Helmet>
+      </HelmetProvider>
 
-        <div className={styles.contactContainer}>
-          <h1 data-aos="zoom-in" data-aos-duration="1500">
-            Kontaktiere mich
-          </h1>
-          <p data-aos="zoom-in" data-aos-duration="1500">
-            Deine Daten werde ich nur für die von dir gewünschten Wünsche nutzen
-            und zu keinem Zeitpunkt an Dritte übermitteln. <br />
-            Erfahre mehr unter
-          </p>
+      <div className={styles.contactContainer}>
+        <h1 data-aos="zoom-in" data-aos-duration="1500">
+          Kontaktiere mich
+        </h1>
+        <p data-aos="zoom-in" data-aos-duration="1500">
+          Deine Daten werde ich nur für die von dir gewünschten Wünsche nutzen
+          und zu keinem Zeitpunkt an Dritte übermitteln. <br />
+          Erfahre mehr unter
+        </p>
 
-          <form
-            action="https://formspree.io/f/myyqgqrr"
-            method="POST"
-            data-aos="fade-down"
-            data-aos-duration="2000"
-            data-aos-delay="500"
-            className={styles.formContainer}
-            onSubmit={submitFormHandler}
-          >
-            <label htmlFor="fName"> Vorname* </label>
-            <input
-              type="text"
-              name="fName"
-              id="fName"
-              className={fNameStyle}
-              value={enteredFirstName}
-              onChange={firstNameChangeHandler}
-              onBlur={firstNameBlurHandler}
-              placeholder="vorname"
-            ></input>
-            <ValidationError
-              prefix="fName"
-              field="fName"
-              errors={state.errors}
-            />
+        <form
+          action="https://formspree.io/f/myyqgqrr"
+          method="POST"
+          data-aos="fade-down"
+          data-aos-duration="2000"
+          data-aos-delay="500"
+          className={styles.formContainer}
+          onSubmit={submitFormHandler}
+        >
+          <label htmlFor="fName"> Vorname* </label>
+          <input
+            type="text"
+            name="fName"
+            id="fName"
+            className={fNameStyle}
+            value={enteredFirstName}
+            onChange={firstNameChangeHandler}
+            onBlur={firstNameBlurHandler}
+            placeholder="vorname"
+          ></input>
+          <ValidationError prefix="fName" field="fName" errors={state.errors} />
 
-            <label htmlFor="lName"> Nachname* </label>
-            <input
-              type="text"
-              name="lName"
-              id="lName"
-              className={lNameStyle}
-              value={enteredLastName}
-              onChange={lastNameChangeHandler}
-              onBlur={lastNameBlurHandler}
-              placeholder="nachname"
-            ></input>
-            <ValidationError
-              prefix="lName"
-              field="lName"
-              errors={state.errors}
-            />
+          <label htmlFor="lName"> Nachname* </label>
+          <input
+            type="text"
+            name="lName"
+            id="lName"
+            className={lNameStyle}
+            value={enteredLastName}
+            onChange={lastNameChangeHandler}
+            onBlur={lastNameBlurHandler}
+            placeholder="nachname"
+          ></input>
+          <ValidationError prefix="lName" field="lName" errors={state.errors} />
 
-            <label htmlFor="user"> Adresse & Hausnummer* </label>
-            <input
-              type="text"
-              className={adressStyle}
-              id="user"
-              name="adress"
-              value={enteredAdress}
-              onChange={adressChangeHandler}
-              onBlur={adressBlurHandler}
-              placeholder="adresse und hausnummer"
-              required
-            ></input>
-            <ValidationError
-              prefix="adress"
-              field="adress"
-              errors={state.errors}
-            />
+          <label htmlFor="user"> Adresse & Hausnummer* </label>
+          <input
+            type="text"
+            className={adressStyle}
+            id="user"
+            name="adress"
+            value={enteredAdress}
+            onChange={adressChangeHandler}
+            onBlur={adressBlurHandler}
+            placeholder="adresse und hausnummer"
+            required
+          ></input>
+          <ValidationError
+            prefix="adress"
+            field="adress"
+            errors={state.errors}
+          />
 
-            <label htmlFor="user"> Postleitzahl* </label>
-            <input
-              type="number"
-              className={postalStyle}
-              id="user"
-              name="postal"
-              value={enteredPostal}
-              onChange={postalChangeHandler}
-              onBlur={postalBlurHandler}
-              placeholder="postleitzahl"
-              required
-            ></input>
+          <label htmlFor="user"> Postleitzahl* </label>
+          <input
+            type="number"
+            className={postalStyle}
+            id="user"
+            name="postal"
+            value={enteredPostal}
+            onChange={postalChangeHandler}
+            onBlur={postalBlurHandler}
+            placeholder="postleitzahl"
+            required
+          ></input>
 
-            <ValidationError
-              prefix="postal"
-              field="postal"
-              errors={state.errors}
-            />
+          <ValidationError
+            prefix="postal"
+            field="postal"
+            errors={state.errors}
+          />
 
-            <label htmlFor="user"> Telefon* </label>
-            <input
-              type="tel"
-              className={telStyle}
-              id="user"
-              name="tel"
-              value={enteredTel}
-              onChange={telChangeHandler}
-              onBlur={telBlurHandler}
-              placeholder="telefon"
-              required
-            ></input>
-            <ValidationError prefix="tel" field="tel" errors={state.errors} />
+          <label htmlFor="user"> Telefon* </label>
+          <input
+            type="tel"
+            className={telStyle}
+            id="user"
+            name="tel"
+            value={enteredTel}
+            onChange={telChangeHandler}
+            onBlur={telBlurHandler}
+            placeholder="telefon"
+            required
+          ></input>
+          <ValidationError prefix="tel" field="tel" errors={state.errors} />
 
-            <label htmlFor="user"> Email* </label>
-            <input
-              type="email"
-              id="user"
-              name="email"
-              className={emailStyle}
-              value={enteredEmail}
-              onChange={emailChangeHandler}
-              onBlur={emailBlurHandler}
-              placeholder="email"
-              required
-            ></input>
-            <ValidationError
-              prefix="email"
-              field="email"
-              errors={state.errors}
-            />
+          <label htmlFor="user"> Email* </label>
+          <input
+            type="email"
+            id="user"
+            name="email"
+            className={emailStyle}
+            value={enteredEmail}
+            onChange={emailChangeHandler}
+            onBlur={emailBlurHandler}
+            placeholder="email"
+            required
+          ></input>
+          <ValidationError prefix="email" field="email" errors={state.errors} />
 
-            <label htmlFor="user"> errechneter Entbindungstermin* </label>
-            <input
-              className={birthStyle}
-              type="date"
-              id="datepicker"
-              value={enteredBirth}
-              onChange={birthChangeHandler}
-              onBlur={birthBlurHandler}
-              name="birth"
-              min={currentDate}
-              max={maxDate}
-              placeholder="errechneter Entbindungstermin"
-              required
-            />
-            <ValidationError
-              prefix="birth"
-              field="birth"
-              errors={state.errors}
-            />
+          <label htmlFor="user"> errechneter Entbindungstermin* </label>
+          <input
+            className={birthStyle}
+            type="date"
+            id="datepicker"
+            value={enteredBirth}
+            onChange={birthChangeHandler}
+            onBlur={birthBlurHandler}
+            name="birth"
+            min={currentDate}
+            max={maxDate}
+            placeholder="errechneter Entbindungstermin"
+            required
+          />
+          <ValidationError prefix="birth" field="birth" errors={state.errors} />
 
-            <label htmlFor="user"> Krankenkasse* </label>
-            <input
-              type="text"
-              className={insuranceStyle}
-              value={enteredInsurance}
-              onChange={insuranceChangeHandler}
-              onBlur={insuranceBlurHandler}
-              id="user"
-              name="insurance"
-              required
-              placeholder="krankenkasse"
-            ></input>
-            <ValidationError
-              prefix="insurance"
-              field="insurance"
-              errors={state.errors}
-            />
+          <label htmlFor="user"> Krankenkasse* </label>
+          <input
+            type="text"
+            className={insuranceStyle}
+            value={enteredInsurance}
+            onChange={insuranceChangeHandler}
+            onBlur={insuranceBlurHandler}
+            id="user"
+            name="insurance"
+            required
+            placeholder="krankenkasse"
+          ></input>
+          <ValidationError
+            prefix="insurance"
+            field="insurance"
+            errors={state.errors}
+          />
 
-            <label htmlFor="user">
-              {" "}
-              schreibe mir gern weitere Anliegen / Fragen{" "}
-            </label>
-            <textarea
-              value={enteredMessage}
-              id="user"
-              name="message"
-              onChange={messageChangeHandler}
-              onBlur={messageBlurHandler}
-              placeholder="schreibe mir gern weitere anliegen / fragen"
-            ></textarea>
-            <ValidationError
-              prefix="message"
-              field="message"
-              errors={state.errors}
-            />
+          <label htmlFor="user">
+            {" "}
+            schreibe mir gern weitere Anliegen / Fragen{" "}
+          </label>
+          <textarea
+            value={enteredMessage}
+            id="user"
+            name="message"
+            onChange={messageChangeHandler}
+            onBlur={messageBlurHandler}
+            placeholder="schreibe mir gern weitere anliegen / fragen"
+          ></textarea>
+          <ValidationError
+            prefix="message"
+            field="message"
+            errors={state.errors}
+          />
 
-            <label htmlFor="user"> </label>
+          <label htmlFor="user"> </label>
 
-            <div className={styles.checkboxContainer}>
-              <input type="checkbox" onClick={checkboxHandler}></input> ja, ich
-              habe den Datenschutzhinweis gelesen und akzeptiere die dortigen
-              Bedingungen.
-            </div>
+          <div className={styles.checkboxContainer}>
+            <input type="checkbox" onClick={checkboxHandler}></input> ja, ich
+            habe den Datenschutzhinweis gelesen und akzeptiere die dortigen
+            Bedingungen.
+          </div>
 
-            <button type="submit" disabled={!formComplete}>
-              sende deine Anfrage
-            </button>
-            {!formComplete && (
-              <p className={styles.formInfos}>
-                bitte fülle alle Felder mit den Sternchen unbedingt aus und
-                akzeptiere die Datenschutzhinweise, ehe du die Kontaktanfrage
-                abschickst
-              </p>
-            )}
-          </form>
-        </div>
+          <button type="submit" disabled={!formComplete}>
+            sende deine Anfrage
+          </button>
+          {!formComplete && (
+            <p className={styles.formInfos}>
+              bitte fülle alle Felder mit den Sternchen unbedingt aus und
+              akzeptiere die Datenschutzhinweise, ehe du die Kontaktanfrage
+              abschickst
+            </p>
+          )}
+        </form>
       </div>
-    </Layout>
+    </div>
   );
 }
 
