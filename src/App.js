@@ -1,30 +1,27 @@
-
-import {Fragment} from 'react'
+import { Fragment } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-//STYLES 
-import './App.css';
+//STYLES
+import "./App.css";
 
-
+//COMPONENTS
+import Layout from "./COMPONENTS/Layout";
+import HeaderImg from "./COMPONENTS/HeaderImg";
 
 //PAGES
-import Root from "./PAGES/Root";
-import AboutMe from './PAGES/AboutMe';
-import MyWork from './PAGES/MyWork';
-import Contact from './PAGES/Contact';
-import HeaderImg from './PAGES/HeaderImg';
-import DataPrivacy from './PAGES/DataPrivacy';
-import Impressum from './PAGES/Impressum'
-
+import AboutMe from "./pages/uebermich";
+import MyWork from "./pages/meinedienstleistungen";
+import Contact from "./pages/kontakt";
+import DataPrivacy from "./pages/datenschutz";
+import Impressum from './pages/impressum'
 
 //SEO
-import { Helmet } from 'react-helmet';
-
+import { Helmet } from "react-helmet";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Layout />,
     children: [
       {
         path: "/",
@@ -54,21 +51,22 @@ const router = createBrowserRouter([
   },
 ]);
 
-
 function App() {
-
   return (
     <RouterProvider router={router}>
       <Helmet>
         <title> Hebamme in Hamburg: Shaana Brown Näckler </title>
-        <meta name="keywords" content="Hebamme, Hamburg, Altona, Eimsbüttel, Eppendorf, Sternschanze,
+        <meta
+          name="keywords"
+          content="Hebamme, Hamburg, Altona, Eimsbüttel, Eppendorf, Sternschanze,
           St. Pauli, Ottensen, Bahrenfeld, Shaana Brown Näckler,
           Schwangerenvorsorge, Wochenbett, Stillzeit, Pinard-Rohr, Baby,
           Babypflege, Schwangerschaft, Schwangerschaftsbetreuung,
           Geburtsvorbereitung, Wochenbettbetreuung, Stillberatung, Babymassage,
           Elternberatung, Geburtsbegleitung, Familienplanung, Nachsorge,
           Hebammenbetreuung, Wochenbettbetreuung für zu Hause, Beratung bei
-          Schwangerschaftsbeschwerden"/>
+          Schwangerschaftsbeschwerden"
+        />
         <meta
           name="description "
           content="offizielle Homepage der Hebamme Shaana Brown Näckler, Hamburg"
