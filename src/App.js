@@ -28,23 +28,23 @@ const router = createBrowserRouter([
         element: <HeaderImg />,
       },
       {
-        path: "/meine-dienstleistungen",
+        path: "meine-dienstleistungen",
         element: <MyWork />,
       },
       {
-        path: "/ueber-mich",
+        path: "ueber-mich",
         element:<AboutMe/>
       },
       {
-        path: "/kontakt",
+        path: "kontakt",
         element: <Contact />,
       },
       {
-        path: "/datensicherheit",
+        path: "datensicherheit",
         element: <DataPrivacy />,
       },
       {
-        path: "/impressum",
+        path: "impressum",
         element: <Impressum />,
       },
     ],
