@@ -22,10 +22,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/meinedienstleistungen": [
+    "/kontakt": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/meinedienstleistungen.js"
+      "static/chunks/pages/kontakt.js"
     ],
     "/uebermich": [
       "static/chunks/webpack.js",
