@@ -1,29 +1,7 @@
 
 
-
-import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-
-const Layout = ({ children }) => {
-  return (
-    <div>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </div>
-  );
-};
-
-export default Layout;
-
 /*
-
 import React from "react";
-
-
-
-
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -38,11 +16,10 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+
 */
 
-
-
-/*
+import React from "react";
 
 import { Outlet } from "react-router-dom";
 
@@ -68,4 +45,3 @@ function Root() {
 }
 
 export default Root;
-*/

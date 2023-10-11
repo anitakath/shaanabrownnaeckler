@@ -1,35 +1,41 @@
-import React, { useContext } from "react";
+
 
 import { useEffect } from "react";
-import Link from 'next/link'
-
-
-import Layout from "../COMPONENTS/Layout";
+import { Link } from "react-router-dom";
 
 
 //STYLES  & ANIMATIONS
 
-import styles from "../STYLES/MyWork.module.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import styles from '../STYLES/MyWork.module.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-//IMAGES
-import Image from 'next/image'
-import SVI from "../../public/Shaana/Foto-1.jpg";
-import SVII from "../../public/Shaana/P7170066.jpg";
-import SV from "../../public/Shaana/IMG_3628.jpg";
-import WB from "../../public/Shaana/IMG_3675.jpg";
 
-//SEO
+
+
+//IMAGES 
+import SVI from '../Shaana/Foto-1.jpg'
+import SVII from '../Shaana/P7170066.jpg'
+import SV from '../Shaana/IMG_3628.jpg'
+import WB from '../Shaana/IMG_3675.jpg'
+
+
+
+//SEO 
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
-function MyWork() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
+function MyWork(){
 
-  return (
-    <Layout>
+
+    useEffect(() =>{
+        AOS.init();
+    }, [])
+
+
+     
+  
+
+    return (
       <div className={styles.sectionContainer}>
         <HelmetProvider>
           <Helmet>
@@ -104,7 +110,7 @@ function MyWork() {
               <br />
             </div>
             <div className={styles.imgContainer}>
-              <Image
+              <img
                 src={SVI}
                 className={styles.firstImage}
                 alt="something"
@@ -118,7 +124,7 @@ function MyWork() {
 
           <div className={styles.fieldB}>
             <div className={styles.imgContainer}>
-              <Image
+              <img
                 src={SVII}
                 className={styles.secondImage}
                 alt="something"
@@ -184,7 +190,7 @@ function MyWork() {
               </ul>
             </div>
             <div className={styles.imgContainer}>
-              <Image
+              <img
                 src={WB}
                 className={styles.thirdImage}
                 alt="something"
@@ -197,7 +203,7 @@ function MyWork() {
 
           <div className={styles.fieldB}>
             <div className={styles.imgContainer}>
-              <Image
+              <img
                 src={SV}
                 className={styles.thirdImage}
                 alt="something"
@@ -219,15 +225,17 @@ function MyWork() {
                 Zögere nicht, mich zu kontaktieren, um weitere Informationen zu
                 erhalten.
               </p>
-              <Link href="/kontakt" className={styles.contactLink}>
+              <Link
+                to="/kontakt"
+                className={styles.contactLink}
+              >
                 Zum Kontaktformular{" "}
               </Link>
             </div>
           </div>
         </div>
       </div>
-    </Layout>
-  );
+    );
 }
 
 export default MyWork;

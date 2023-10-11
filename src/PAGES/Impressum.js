@@ -6,7 +6,7 @@ import styles from "../STYLES/Impressum.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 function Impressum() {
   useEffect(() => {
@@ -27,7 +27,7 @@ function Impressum() {
 
               <p>
                 kontaktieren Sie mich gern über mein
-                <Link href="/contact" className={styles.link}>
+                <Link to="/contact" className={styles.link}>
                   Kontaktformular
                 </Link>
                 oder per E-Mail:
@@ -45,7 +45,7 @@ function Impressum() {
                 ich Mitglied beim Deutschen Hebammenverband und berücksichtige
                 während meiner Arbeit stets die offiziellen
                 <Link
-                  href="https://www.g-ba.de/richtlinien/19/"
+                  to="https://www.g-ba.de/richtlinien/19/"
                   target="_blank"
                   className={styles.link}
                 >

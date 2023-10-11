@@ -2,18 +2,13 @@
 import React, { useContext } from "react";
 import { useEffect } from "react";
 
-
-import Layout from "../COMPONENTS/Layout";
-
-
 //STYLES
 import styles from "../STYLES/AboutMe.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 //IMAGES
-import Image from "next/image";
-import img from "../../public/Shaana/aboutMeImg.jpg";
+import img from "../Shaana/aboutMeImg.jpg";
 
 //SEO
 import { Helmet, HelmetProvider} from "react-helmet-async";
@@ -24,8 +19,7 @@ function AboutMe() {
   }, []);
 
   return (
-    <Layout>
-      <div className={styles.sectionContainer}>
+    <div className={styles.sectionContainer}>
       <HelmetProvider>
         <Helmet>
           <title> Shaanas Werdegang und Arbeit als Hebamme </title>
@@ -110,21 +104,16 @@ function AboutMe() {
         </div>
 
         <div className={styles.aboutMeImgWrapper}>
-          <Image
+          <img
             src={img}
             className={styles.aboutMeImg}
             data-aos="fade-right"
             data-aos-duration="1000"
             alt="picture of Shaana Brown Näckler, Hebamme / midwife"
-          ></Image>
+          ></img>
         </div>
       </div>
-      </div>
-
-    </Layout>
-    
-    
-  
+    </div>
   );
 }
 
