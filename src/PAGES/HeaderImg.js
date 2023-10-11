@@ -45,6 +45,7 @@ function HeaderImg(){
           className={styles.headerImg}
           alt="Pinard-Rohr, mit der die Hebamme die Herztöne des Babys abhört"
         ></img>
+        <h1> hi</h1>
 
         <img
           src={headerMobile}
