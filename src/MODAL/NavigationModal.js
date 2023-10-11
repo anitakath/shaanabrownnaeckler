@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 
 //STYLES & ANIMATIONS 
-import '../STYLES/Modal.css'
+//import '../STYLES/Modal.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
