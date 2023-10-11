@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/meinedienstleistungen": "pages/meinedienstleistungen.js",
+  "/uebermich": "pages/uebermich.js",
   "/kontakt": "pages/kontakt.js",
-  "/uebermich": "pages/uebermich.js"
+  "/meinedienstleistungen": "pages/meinedienstleistungen.js"
 }
