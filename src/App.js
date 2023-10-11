@@ -9,7 +9,7 @@ import Layout from "./COMPONENTS/Layout";
 import HeaderImg from "./COMPONENTS/HeaderImg";
 
 //PAGES
-//import AboutMe from './pages/uebermich'
+import AboutMe from './pages/uebermich'
 import MyWork from "./pages/meinedienstleistungen";
 import Contact from "./pages/kontakt";
 import DataPrivacy from "./pages/datenschutz";
@@ -30,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/meine-dienstleistungen",
         element: <MyWork />,
+      },
+      {
+        path: "/ueber-mich",
+        element:<AboutMe/>
       },
       {
         path: "/kontakt",
