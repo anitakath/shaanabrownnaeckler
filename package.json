@@ -22,9 +22,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "next dev",
+   
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "start": "next start",
     "predeploy": "npm run build",
     "deploy": " gh-pages -d build ",
     "test": "jest --watch",
