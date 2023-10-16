@@ -225,10 +225,8 @@ function MyWork(){
                 Zögere nicht, mich zu kontaktieren, um weitere Informationen zu
                 erhalten.
               </p>
-              <Link
-                to="/kontakt"
-                className={styles.contactLink}
-              >
+              <Link to="/kontakt" className={styles.contactLink}>
+
                 Zum Kontaktformular{" "}
               </Link>
             </div>

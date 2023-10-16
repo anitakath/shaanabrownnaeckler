@@ -30,7 +30,7 @@
     "test": "jest --watch",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://nbaplayers-f2003067a6ec.herokuapp.com",
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -20,6 +20,7 @@ import { Helmet } from "react-helmet";
 
 const router = createBrowserRouter([
   {
+
     path: "/",
     element: <Layout />,
     children: [
@@ -48,8 +49,12 @@ const router = createBrowserRouter([
         element: <Impressum />,
       },
     ],
+
+
+
   },
-]);
+  
+])
 
 function App() {
   return (

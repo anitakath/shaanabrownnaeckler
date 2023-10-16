@@ -1,4 +1,4 @@
-import {Link, redirect, useNavigate} from 'react-router-dom'
+
 import {useEffect, useState} from 'react'
 
 
@@ -173,52 +173,52 @@ function Contact(){
 
   const submitFormHandler = async (e) => {
 
-    
+    e.preventDefault();
+    console.log('hi')
+
+     const formData = {
+       vorname: enteredFirstName,
+       nachname: enteredLastName,
+       adresse: enteredAdress,
+       postleitzahl: enteredPostal,
+       telefonnummer: enteredTel,
+       email: enteredEmail,
+       geburtstermin: enteredBirth,
+       versicherung: enteredInsurance,
+       nachricht: enteredMessage,
+       datensicherheit: checkboxCheck,
+     };
+
+     try {
+       const response = await fetch(
+         //package.json: "proxy": "https://nbaplayers-f2003067a6ec.herokuapp.com",
+         //"https://nbaplayers-f2003067a6ec.herokuapp.com/api/validate",
+         "/api/validate",
+         {
+           method: "POST",
+           headers: {
+             "Content-Type": "application/json",
+           },
+           body: JSON.stringify(formData),
+         }
+       );
+
+       const data = await response.json();
+
+       if (response.ok) {
+         console.log(data.message);
+         setFormComplete(true);
+         console.log(formComplete);
+         //handleSubmit();
+       } else {
+         console.log(data.error);
+       }
+     } catch (error) {
+       console.error(error);
+     }
 
 
-    const formData = {
-      vorname: enteredFirstName,
-      nachname: enteredLastName,
-      adresse: enteredAdress,
-      postleitzahl: enteredPostal,
-      telefonnummer: enteredTel,
-      email: enteredEmail,
-      geburtstermin: enteredBirth,
-      versicherung: enteredInsurance,
-      nachricht: enteredMessage,
-      datensicherheit: checkboxCheck,
-    };
-
-    try {
-      const response = await fetch(
-        "https://nbaplayers-f2003067a6ec.herokuapp.com/api/validate",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      const data = await response.json();
-
-      if(response.ok){
-    
-        console.log(data.message)
-        setFormComplete(true)
-        console.log(formComplete)
-        handleSubmit();
- 
-
-      } else{
-        console.log(data.error)
-      }
-     
-    } catch (error) {
-      console.error(error)
-
-    }
+   
 
     /*
   if (formComplete === true) {
@@ -266,180 +266,10 @@ function Contact(){
         <p data-aos="zoom-in" data-aos-duration="1500">
           Deine Daten werde ich nur für die von dir gewünschten Wünsche nutzen
           und zu keinem Zeitpunkt an Dritte übermitteln. <br />
-          Erfahre mehr unter
+          Erfahre mehr unter...
         </p>
 
-        <form
-          action="https://formspree.io/f/myyqgqrr"
-          method="POST"
-          data-aos="fade-down"
-          data-aos-duration="2000"
-          data-aos-delay="500"
-          className={styles.formContainer}
-          onSubmit={submitFormHandler}
-        >
-          <label htmlFor="fName"> Vorname* </label>
-          <input
-            type="text"
-            name="fName"
-            id="fName"
-            className={fNameStyle}
-            value={enteredFirstName}
-            onChange={firstNameChangeHandler}
-            onBlur={firstNameBlurHandler}
-            placeholder="vorname"
-          ></input>
-          <ValidationError prefix="fName" field="fName" errors={state.errors} />
-
-          <label htmlFor="lName"> Nachname* </label>
-          <input
-            type="text"
-            name="lName"
-            id="lName"
-            className={lNameStyle}
-            value={enteredLastName}
-            onChange={lastNameChangeHandler}
-            onBlur={lastNameBlurHandler}
-            placeholder="nachname"
-          ></input>
-          <ValidationError prefix="lName" field="lName" errors={state.errors} />
-
-          <label htmlFor="user"> Adresse & Hausnummer* </label>
-          <input
-            type="text"
-            className={adressStyle}
-            id="user"
-            name="adress"
-            value={enteredAdress}
-            onChange={adressChangeHandler}
-            onBlur={adressBlurHandler}
-            placeholder="adresse und hausnummer"
-            required
-          ></input>
-          <ValidationError
-            prefix="adress"
-            field="adress"
-            errors={state.errors}
-          />
-
-          <label htmlFor="user"> Postleitzahl* </label>
-          <input
-            type="number"
-            className={postalStyle}
-            id="user"
-            name="postal"
-            value={enteredPostal}
-            onChange={postalChangeHandler}
-            onBlur={postalBlurHandler}
-            placeholder="postleitzahl"
-            required
-          ></input>
-
-          <ValidationError
-            prefix="postal"
-            field="postal"
-            errors={state.errors}
-          />
-
-          <label htmlFor="user"> Telefon* </label>
-          <input
-            type="tel"
-            className={telStyle}
-            id="user"
-            name="tel"
-            value={enteredTel}
-            onChange={telChangeHandler}
-            onBlur={telBlurHandler}
-            placeholder="telefon"
-            required
-          ></input>
-          <ValidationError prefix="tel" field="tel" errors={state.errors} />
-
-          <label htmlFor="user"> Email* </label>
-          <input
-            type="email"
-            id="user"
-            name="email"
-            className={emailStyle}
-            value={enteredEmail}
-            onChange={emailChangeHandler}
-            onBlur={emailBlurHandler}
-            placeholder="email"
-            required
-          ></input>
-          <ValidationError prefix="email" field="email" errors={state.errors} />
-
-          <label htmlFor="user"> errechneter Entbindungstermin* </label>
-          <input
-            className={birthStyle}
-            type="date"
-            id="datepicker"
-            value={enteredBirth}
-            onChange={birthChangeHandler}
-            onBlur={birthBlurHandler}
-            name="birth"
-            min={currentDate}
-            max={maxDate}
-            placeholder="errechneter Entbindungstermin"
-            required
-          />
-          <ValidationError prefix="birth" field="birth" errors={state.errors} />
-
-          <label htmlFor="user"> Krankenkasse* </label>
-          <input
-            type="text"
-            className={insuranceStyle}
-            value={enteredInsurance}
-            onChange={insuranceChangeHandler}
-            onBlur={insuranceBlurHandler}
-            id="user"
-            name="insurance"
-            required
-            placeholder="krankenkasse"
-          ></input>
-          <ValidationError
-            prefix="insurance"
-            field="insurance"
-            errors={state.errors}
-          />
-
-          <label htmlFor="user">
-            {" "}
-            schreibe mir gern weitere Anliegen / Fragen{" "}
-          </label>
-          <textarea
-            value={enteredMessage}
-            id="user"
-            name="message"
-            onChange={messageChangeHandler}
-            onBlur={messageBlurHandler}
-            placeholder="schreibe mir gern weitere anliegen / fragen"
-          ></textarea>
-          <ValidationError
-            prefix="message"
-            field="message"
-            errors={state.errors}
-          />
-
-          <label htmlFor="user"> </label>
-
-          <div className={styles.checkboxContainer}>
-            <input type="checkbox" onClick={checkboxHandler}></input> ja, ich
-            habe den Datenschutzhinweis gelesen und akzeptiere die dortigen
-            Bedingungen.
-          </div>
-
-          <button type="submit" disabled={!formComplete}>
-            sende deine Anfrage
-          </button>
-          {!formComplete && (
-            <p className={styles.formInfos}>
-              bitte fülle alle Felder mit den Sternchen unbedingt aus und
-              akzeptiere die Datenschutzhinweise, ehe du die Kontaktanfrage
-              abschickst
-            </p>
-          )}
-        </form>
+       
       </div>
     </div>
   );
